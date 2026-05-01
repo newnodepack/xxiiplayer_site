@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XXII Player - 어떤 디바이스에서도 무제한으로 나의 음악을 즐겨요요</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif; background: #0a0a0f; color: #fff; line-height: 1.6; overflow-x: hidden; }
+
+  /* Navigation */
+  nav { position: fixed; top: 0; width: 100%; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(10px); z-index: 1000; }
+
+  .logo { font-size: 24px; font-weight: 800; background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+
+  .nav-links a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+
+  .nav-links a:hover { color: #ec4899; }
+
+  /* Hero Section */
+  .hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 100px 60px 60px; background: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.3), transparent 50%), radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3), transparent 50%); gap: 50px; flex-wrap: wrap; }
+
+  .hero-content { flex: 1; min-width: 300px; }
+
+  .hero h1 { font-size: 64px; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(135deg, #fff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  .hero p { font-size: 20px; color: #aaa; margin-bottom: 40px; max-width: 500px; }
+
+  .download-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+
+  .btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; gap: 10px; }
+
+  .btn-primary { background: linear-gradient(135deg, #a855f7, #ec4899); color: white; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4); }
+
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(168, 85, 247, 0.6); }
+
+  .btn-secondary { background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.2); }
+
+  .btn-secondary:hover { background: rgba(255, 255, 255, 0.2); }
+
+  /* Phone Mockup */
+  .phone-mockup { flex: 1; display: flex; justify-content: center; min-width: 300px; }
+
+  .phone { width: 280px; height: 560px; background: #1a1a2e; border-radius: 40px; padding: 15px; box-shadow: 0 30px 60px rgba(168, 85, 247, 0.3); border: 3px solid #2a2a3e; position: relative; animation: float 4s ease-in-out infinite; }
+
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+  .phone-screen { width: 100%; height: 100%; background: linear-gradient(135deg, #1e1b4b, #831843); border-radius: 28px; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+  .album-cover { width: 180px; height: 180px; background: linear-gradient(135deg, #a855f7, #ec4899); border-radius: 20px; margin-bottom: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; font-size: 60px; animation: rotate 10s linear infinite; }
+
+  @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  .song-title { font-size: 18px; font-weight: 700; margin-bottom: 5px; }
+
+  .artist-name { font-size: 14px; color: #ccc; margin-bottom: 20px; }
+
+  .progress-bar { width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-bottom: 20px; }
+
+  .progress { width: 60%; height: 100%; background: linear-gradient(90deg, #a855f7, #ec4899); border-radius: 2px; }
+
+  .controls { display: flex; gap: 25px; font-size: 24px; }
+
+  .play-btn { width: 50px; height: 50px; background: white; color: #1e1b4b; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+
+  /* Features */
+  .features { padding: 100px 60px; background: #0a0a0f; }
+
+  .section-title { text-align: center; font-size: 48px; margin-bottom: 60px; background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+
+  .feature-card { background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1)); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 20px; transition: transform 0.3s, border-color 0.3s; }
+
+  .feature-card:hover { transform: translateY(-10px); border-color: rgba(168, 85, 247, 0.5); }
+
+  .feature-icon { font-size: 40px; margin-bottom: 20px; }
+
+  .feature-card h3 { font-size: 22px; margin-bottom: 15px; }
+
+  .feature-card p { color: #aaa; }
+
+  /* Stats */
+  .stats { padding: 80px 60px; background: linear-gradient(135deg, #1e1b4b, #831843); display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; }
+
+  .stat-item { text-align: center; }
+
+  .stat-number { font-size: 56px; font-weight: 800; background: linear-gradient(135deg, #fff, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  .stat-label { font-size: 16px; color: #ccc; margin-top: 10px; }
+
+  /* CTA */
+  .cta { padding: 100px 60px; text-align: center; background: #0a0a0f; }
+
+  .cta h2 { font-size: 48px; margin-bottom: 20px; }
+
+  .cta p { font-size: 18px; color: #aaa; margin-bottom: 40px; }
+
+  /* Footer */
+  footer { padding: 40px 60px; background: #050508; text-align: center; color: #666; border-top: 1px solid rgba(255,255,255,0.1); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav { padding: 15px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 20px 60px; }
+    .hero h1 { font-size: 40px; }
+    .features, .cta, .stats { padding: 60px 20px; }
+    .section-title, .cta h2 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">🎵 XXII Player</div>
+  <ul class="nav-links">
+    <li><a href="#features">기능</a></li>
+    <li><a href="#stats">통계</a></li>
+    <li><a href="#download">다운로드</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>당신의 음악,<br>더 깊은 울림</h1>
+    <p>XXII Player는 단순한 음악 플레이어를 넘어, 당신의 일상에 감성을 더하는 안드로이드 뮤직 플레이어입니다. 고음질 사운드와 직관적인 UI로 음악을 즐겨보세요.</p>
+    <div class="download-buttons" id="download">
+      <a href="#" class="btn btn-primary">▶ Google Play</a>
+      <a href="#" class="btn btn-secondary">⬇ APK 다운로드</a>
+    </div>
+  </div>
+  <div class="phone-mockup">
+    <div class="phone">
+      <div class="phone-screen">
+        <div class="album-cover">🎶</div>
+        <div class="song-title">Midnight Vibes</div>
+        <div class="artist-name">Lo-Fi Dreams</div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <div class="controls">
+          <span>⏮</span>
+          <div class="play-btn">▶</div>
+          <span>⏭</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="features">
+  <h2 class="section-title">강력한 기능</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🎧</div>
+      <h3>고음질 사운드</h3>
+      <p>FLAC, MP3 등 무손실 오디오 포맷을 지원하여 스튜디오 퀄리티의 음질을 제공합니다.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎚️</div>
+      <h3>10밴드 이퀄라이저</h3>
+      <p>장르별 프리셋과 커스텀 이퀄라이저로 나만의 사운드를 완성하세요.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📚</div>
+      <h3>스마트 플레이리스트</h3>
+      <p>AI가 당신의 취향을 학습하여 자동으로 플레이리스트를 추천해드립니다.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌙</div>
+      <h3>다크 모드</h3>
+      <p>눈에 편안한 다크 모드와 다양한 테마로 개성 있게 꾸며보세요.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <h3>위젯 지원</h3>
+      <p>홈 화면에서 바로 음악을 컨트롤할 수 있는 다양한 위젯을 제공합니다.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">☁️</div>
+      <h3>클라우드 동기화</h3>
+      <p>여러 기기에서 플레이리스트와 재생 기록을 자동으로 동기화합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats" id="stats">
+  <div class="stat-item">
+    <div class="stat-number">1M+</div>
+    <div class="stat-label">다운로드</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">4.8★</div>
+    <div class="stat-label">평균 평점</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">50K+</div>
+    <div class="stat-label">리뷰</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100+</div>
+    <div class="stat-label">지원 국가</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>지금 바로 시작하세요</h2>
+  <p>XXII Player와 함께 새로운 음악 경험을 만나보세요.</p>
+  <a href="#" class="btn btn-primary">▶ Google Play에서 다운로드</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 XXII Player. All rights reserved.</p>
+  <p style="margin-top: 10px; font-size: 14px;">Made with 💜 for baseonsell@gmail.com</p>
+</footer>
+
+</body>
+</html>
