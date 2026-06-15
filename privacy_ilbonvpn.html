@@ -229,7 +229,7 @@
 
 <header>
   <h1>🔒 Privacy Policy</h1>
-  <p>IlbonVPN Extension &nbsp;|&nbsp; Last updated: May 2025</p>
+  <p>IlbonVPN Extension &nbsp;|&nbsp; Last updated: June 2026</p>
 </header>
 
 <div class="container">
@@ -240,207 +240,158 @@
     <p>
       This Privacy Policy describes how the <strong>IlbonVPN Extension</strong>
       ("Extension", "we", "our") handles user data. This Extension is a Chrome
-      browser extension that allows authenticated users to connect to a private
-      HTTP proxy server using their account credentials.
+      browser extension that provides secure VPN/proxy connection services to users.
     </p>
     <p>
-      We are committed to protecting your privacy. This policy explains exactly
-      what data is collected, why it is collected, and how it is handled.
+      We are fully committed to protecting your privacy. This policy explicitly explains what data is processed, the purpose of processing, how it is stored, and our strict non-sharing practices to ensure compliance with the Chrome Web Store Developer Program Policies.
     </p>
   </div>
 
-  <!-- 2. Data We Collect -->
+  <!-- 2. Data We Process (Collection) -->
   <div class="card">
-    <h2><span class="icon">📦</span> 2. Data We Collect</h2>
-    <p>We collect only the minimum data necessary to provide the Extension's core functionality.</p>
+    <h2><span class="icon">📦</span> 2. Data We Process (Collection)</h2>
+    <p>We process only the minimum necessary data to provide core authentication and proxy routing functionalities.</p>
 
     <table>
       <thead>
         <tr>
-          <th>Data Type</th>
-          <th>Purpose</th>
-          <th>Collected</th>
-          <th>Stored Where</th>
+          <th>Chrome Web Store Category</th>
+          <th>Specific Data Types</th>
+          <th>Processed</th>
+          <th>Storage Location</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Email address</td>
-          <td>User account login via Firebase Authentication</td>
+          <td><strong>Authentication Information</strong></td>
+          <td>User credentials, passwords, Firebase UID, session tokens</td>
           <td><span class="badge yes">Yes</span></td>
-          <td>Firebase servers (Google)</td>
+          <td>Firebase Authentication (Google Server) &amp; Encrypted Local Storage</td>
         </tr>
         <tr>
-          <td>Firebase UID</td>
-          <td>Identify authenticated user for session creation</td>
+          <td><strong>Personal Communications</strong></td>
+          <td>Email address (used for user account identification)</td>
           <td><span class="badge yes">Yes</span></td>
-          <td>Firebase servers (Google)</td>
+          <td>Firebase Authentication Server</td>
         </tr>
         <tr>
-          <td>Session token</td>
-          <td>Authorize proxy connection after login</td>
-          <td><span class="badge yes">Yes</span></td>
-          <td>Server memory only (1 hour TTL)</td>
+          <td><strong>Location</strong></td>
+          <td>IP address, country/region (to route proxy traffic)</td>
+          <td><span class="badge yes">Yes (Ephemeral)</span></td>
+          <td>Processed in real-time memory (Never written to logs/disk)</td>
         </tr>
         <tr>
-          <td>Selected server / connection state</td>
-          <td>Restore UI state when popup is reopened</td>
-          <td><span class="badge yes">Yes</span></td>
-          <td>Local device only (chrome.storage)</td>
-        </tr>
-        <tr>
-          <td>Browsing history</td>
-          <td>—</td>
-          <td><span class="badge no">Never</span></td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>Visited URLs</td>
-          <td>—</td>
-          <td><span class="badge no">Never</span></td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>Web page content</td>
-          <td>—</td>
-          <td><span class="badge no">Never</span></td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>Financial / health / location data</td>
-          <td>—</td>
-          <td><span class="badge no">Never</span></td>
-          <td>—</td>
+          <td><strong>Web History</strong></td>
+          <td>Visited URLs, page titles, and timestamps of proxy requests</td>
+          <td><span class="badge yes">Yes (Ephemeral)</span></td>
+          <td>Processed instantly through Chrome Proxy API (Zero-Logs)</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- 3. How We Use Your Data -->
+  <!-- 3. Purpose of Data Processing & Usage -->
   <div class="card">
-    <h2><span class="icon">⚙️</span> 3. How We Use Your Data</h2>
+    <h2><span class="icon">⚙️</span> 3. Data Processing &amp; Usage</h2>
+    <p>The collected data categories are used strictly for the following purposes:</p>
     <ul>
-      <li><strong>Email address &amp; Firebase UID</strong> — Used solely to authenticate the user and determine access to premium proxy servers. Not used for marketing or analytics.</li>
-      <li><strong>Session token</strong> — Generated server-side after successful Firebase token verification. Used to authorize proxy connections. Automatically deleted from server memory after 1 hour.</li>
-      <li><strong>Connection state (local)</strong> — Stored on the user's device only via <code>chrome.storage.local</code>. Used to restore the popup UI state. Never transmitted externally.</li>
+      <li><strong>Authentication Information &amp; Personal Communications (Email):</strong> Processed exclusively to manage user registration, secure login sessions, token verification via Firebase, and to verify premium subscription status. We do not use this data for marketing or profiling.</li>
+      <li><strong>Location (IP Address &amp; Region):</strong> Processed dynamically to detect your current connection state, optimize routing pathing, and establish a secure tunnel to our Japan proxy nodes.</li>
+      <li><strong>Web History (Visited URLs &amp; Timestamps):</strong> Required technically by the <code>chrome.proxy</code> API to forward your network requests through the VPN server. This data is handled strictly in transient memory.</li>
     </ul>
   </div>
 
-  <!-- 4. Data We Do NOT Collect -->
+  <!-- 4. Strict Zero-Logs and Data Protection Policies -->
   <div class="card">
-    <h2><span class="icon">🚫</span> 4. Data We Do NOT Collect</h2>
-    <p>The following data is <strong>never collected, stored, or transmitted</strong> by this Extension:</p>
+    <h2><span class="icon">🛡️</span> 4. Zero-Logs Policy &amp; Security</h2>
+    <p>While <strong>Location (IP)</strong> and <strong>Web History</strong> are technically processed to perform the VPN proxy routing, we enforce a strict <strong>Zero-Logs Policy</strong>:</p>
+    <ul>
+      <li>We do NOT inspect, analyze, or manipulate the contents of your web history or traffic.</li>
+      <li>We do NOT record, log, or save your visited URLs, timestamps, or original IP addresses onto any persistent disks or databases. Everything is cleared from real-time memory instantly upon routing execution.</li>
+      <li>All runtime dependencies and SDKs (including Firebase) are securely bundled locally inside the extension package to avoid remote code execution risk.</li>
+    </ul>
+  </div>
+
+  <!-- 5. Data We Do NOT Collect -->
+  <div class="card">
+    <h2><span class="icon">🚫</span> 5. Data We Do NOT Collect</h2>
+    <p>The following categories of sensitive user data are <strong>never</strong> processed, collected, or transmitted under any circumstances:</p>
     <div class="tag-row">
-      <span class="tag no-collect">Browsing history</span>
-      <span class="tag no-collect">Visited URLs</span>
-      <span class="tag no-collect">Web page content</span>
-      <span class="tag no-collect">Keystrokes / form input</span>
-      <span class="tag no-collect">Location data</span>
-      <span class="tag no-collect">Financial information</span>
-      <span class="tag no-collect">Health information</span>
-      <span class="tag no-collect">Device identifiers</span>
+      <span class="tag no-collect">Financial Info</span>
+      <span class="tag no-collect">Health / Biometric Data</span>
+      <span class="tag no-collect">User Chat/SMS Content</span>
+      <span class="tag no-collect">Keystrokes / Form Inputs</span>
+      <span class="tag no-collect">Device Hardware Serial Numbers</span>
       <span class="tag no-collect">Cookies from other sites</span>
-    </div>
-    <div class="highlight-box" style="margin-top:16px;">
-      <strong>⚠️ Note on Proxy Traffic</strong>
-      Although web traffic is routed through our proxy server when the
-      Extension is active, we do not log, store, inspect, or analyze
-      the content of any proxied requests. Traffic is forwarded as-is
-      and no records are retained.
     </div>
   </div>
 
-  <!-- 5. Third-Party Services -->
+  <!-- 6. Third-Party Services & Data Sharing -->
   <div class="card">
-    <h2><span class="icon">🔗</span> 5. Third-Party Services</h2>
-    <p>This Extension uses the following third-party service:</p>
+    <h2><span class="icon">🤝</span> 6. Third-Party Services &amp; Data Sharing</h2>
+    <p>We do <strong>not</strong> sell, trade, lease, or share your personal data, web history, or location details with any third-party advertisers, brokers, or external analytics tracking networks.</p>
     <table>
       <thead>
         <tr>
-          <th>Service</th>
-          <th>Provider</th>
+          <th>Service Provider</th>
+          <th>Shared Data</th>
           <th>Purpose</th>
-          <th>Privacy Policy</th>
+          <th>Policy Link</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Firebase Authentication</td>
-          <td>Google LLC</td>
-          <td>User login and token verification</td>
-          <td><a href="https://firebase.google.com/support/privacy" target="_blank" style="color:#1a73e8;">View →</a></td>
+          <td>Firebase (Google LLC)</td>
+          <td>Email, Password, UID</td>
+          <td>User login management &amp; secure token verification</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" style="color:#1a73e8;">View Policy →</a></td>
         </tr>
       </tbody>
     </table>
     <p style="margin-top:14px;">
-      No other third-party analytics, advertising, or tracking services are used.
+      <em>Note: Location and Web History data are absolutely <strong>NEVER shared</strong> with Firebase or any other entity, as they are processed natively and ephemerally on our routing nodes.</em>
     </p>
   </div>
 
-  <!-- 6. Data Sharing -->
+  <!-- 7. Data Storage & Retention (Policy Lifecycle) -->
   <div class="card">
-    <h2><span class="icon">🤝</span> 6. Data Sharing</h2>
-    <p>
-      We do <strong>not</strong> sell, trade, rent, or share your personal data
-      with any third parties, except as described below:
-    </p>
-    <ul>
-      <li><strong>Firebase / Google</strong> — Email and UID are processed by Firebase Authentication as part of the login flow. This is governed by Google's Privacy Policy.</li>
-      <li><strong>Legal requirements</strong> — We may disclose data if required by law or to protect our legal rights.</li>
-    </ul>
-  </div>
-
-  <!-- 7. Data Retention -->
-  <div class="card">
-    <h2><span class="icon">🗂️</span> 7. Data Retention</h2>
+    <h2><span class="icon">🗂️</span> 7. Data Storage &amp; Retention</h2>
+    <p>We retain user data only for the minimum duration necessary to fulfill operational compliance:</p>
     <table>
       <thead>
         <tr>
-          <th>Data</th>
+          <th>Data Category</th>
           <th>Retention Period</th>
-          <th>Auto-deleted</th>
+          <th>Deletion Method</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Email / Firebase UID</td>
-          <td>Until account deletion</td>
-          <td><span class="badge yes">On account delete</span></td>
+          <td>Authentication Info &amp; Email</td>
+          <td>Retained for the lifespan of the user account</td>
+          <td>Permanently wiped upon user-initiated Account Deletion</td>
         </tr>
         <tr>
-          <td>Session token (server)</td>
-          <td>1 hour from issuance</td>
-          <td><span class="badge auto">Auto (TTL)</span></td>
+          <td>Session Tokens</td>
+          <td>1 Hour from issuance</td>
+          <td>Auto-purged via Server memory TTL mechanisms</td>
         </tr>
         <tr>
-          <td>Connection state (local)</td>
-          <td>Until extension is uninstalled or user disconnects</td>
-          <td><span class="badge yes">On uninstall</span></td>
+          <td>Location &amp; Web History</td>
+          <td>0 Seconds (Transient Memory Only)</td>
+          <td>Instantly discarded post-routing execution (Zero-Logs)</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- 8. Security -->
+  <!-- 8. Your Privacy Rights -->
   <div class="card">
-    <h2><span class="icon">🛡️</span> 8. Security</h2>
+    <h2><span class="icon">👤</span> 8. Your Privacy Rights</h2>
+    <p>You possess full autonomy over your data:</p>
     <ul>
-      <li>All authentication is handled by <strong>Firebase Authentication</strong>, which provides industry-standard security including secure token issuance and verification.</li>
-      <li>Firebase ID Tokens are verified server-side using Google's public JWKS endpoint before any proxy access is granted.</li>
-      <li>Session tokens are stored in server memory only and are never written to disk or database.</li>
-      <li>All SDK files (Firebase, Bootstrap) are bundled locally within the extension. No external scripts are loaded at runtime.</li>
-      <li>This extension does not use <code>eval()</code>, dynamic script injection, or any form of remote code execution.</li>
-    </ul>
-  </div>
-
-  <!-- 9. User Rights -->
-  <div class="card">
-    <h2><span class="icon">👤</span> 9. Your Rights</h2>
-    <p>You have the right to:</p>
-    <ul>
-      <li><strong>Access</strong> — Request information about what data we hold about you.</li>
-      <li><strong>Deletion</strong> — Delete your account at any time via the Account page in the Extension. This removes your Firebase credentials permanently.</li>
-      <li><strong>Opt-out</strong> — Simply disconnect the proxy and uninstall the Extension at any time. No data persists after uninstallation.</li>
+      <li><strong>Right to Deletion:</strong> You can completely erase your account and associated authentication data instantly via the Account panel inside the Extension popup.</li>
+      <li><strong>Right to Opt-Out:</strong> You can stop all data processing immediately by turning off the VPN switch or fully uninstalling the Extension from your Chrome browser.</li>
     </ul>
     <div class="tag-row" style="margin-top:12px;">
       <span class="tag safe">Right to Access</span>
@@ -449,44 +400,38 @@
     </div>
   </div>
 
-  <!-- 10. Children's Privacy -->
+  <!-- 9. Children's Privacy -->
   <div class="card">
-    <h2><span class="icon">🧒</span> 10. Children's Privacy</h2>
+    <h2><span class="icon">🧒</span> 9. Children's Privacy</h2>
     <p>
-      This Extension is not directed at children under the age of 13.
-      We do not knowingly collect personal information from children.
-      If you believe a child has provided personal data, please contact
-      us immediately and we will delete it promptly.
+      This Extension does not knowingly target, interact with, or collect personal information from children under the age of 13. If discovered, such data will be immediately removed.
     </p>
   </div>
 
-  <!-- 11. Changes -->
+  <!-- 10. Policy Changes -->
   <div class="card">
-    <h2><span class="icon">📝</span> 11. Changes to This Policy</h2>
+    <h2><span class="icon">📝</span> 10. Changes to This Policy</h2>
     <p>
-      We may update this Privacy Policy from time to time. When we do,
-      we will update the "Last updated" date at the top of this page.
-      Continued use of the Extension after changes constitutes acceptance
-      of the updated policy.
+      We may amend this policy to match compliance changes. Material updates will be updated via the "Last updated" date visible at the top of this document.
     </p>
   </div>
 
-  <!-- 12. Contact -->
+  <!-- 11. Contact Us -->
   <div class="card">
-    <h2><span class="icon">📬</span> 12. Contact Us</h2>
-    <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
+    <h2><span class="icon">📬</span> 11. Contact Us</h2>
+    <p>For any personal data inquiries, deletion failures, or policy questions, contact us at:</p>
     <div class="contact-box">
-      <strong>Developer:</strong> IlbonVPN Extension Team<br>
-      <strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a><br>
-      <strong>Response time:</strong> Within 72 hours
+      <strong>Developer Entity:</strong> IlbonVPN Extension Team<br>
+      <strong>Contact Email:</strong> <a href="mailto:your@email.com">your@email.com</a><br>
+      <strong>SLA Response Window:</strong> Within 72 business hours
     </div>
   </div>
 
 </div>
 
 <footer>
-  © 2025 IlbonVPN Extension. All rights reserved.<br>
-  This policy applies to the Chrome Extension only.
+  © 2026 IlbonVPN Extension. All rights reserved.<br>
+  This policy applies strictly to the Chrome Web Store Extension distribution channel.
 </footer>
 
 </body>
