@@ -50,6 +50,7 @@
     display:inline-block;background:#fdecec;color:var(--brand);border-radius:6px;
     padding:1px 8px;font-size:13px;font-weight:700;margin-right:6px;
   }
+  .tag.cloud{background:#eef2fd;color:#2b57d6}
   .note{background:#f7f2f2;border-left:4px solid var(--brand);padding:12px 14px;border-radius:8px;margin:14px 0}
   footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 20px 40px}
   hr.sep{border:none;border-top:1px dashed var(--line);margin:40px 0}
@@ -72,74 +73,116 @@
   <!-- ============================ 한국어 ============================ -->
   <section class="doc" id="ko">
     <h2>개인정보 처리방침</h2>
-    <p class="updated">앱 이름: <strong>XXII player</strong> · 시행일: 2026년 7월 4일</p>
+    <p class="updated">앱 이름: <strong>XXII player</strong> · 시행일: 2026년 7월 4일 · 최종 개정: 2026년 7월 11일</p>
 
-    <p>본 방침은 음악 재생 애플리케이션 <strong>XXII player</strong>(이하 “앱”)가 이용자의 정보를 어떻게 처리하는지를 설명합니다. 앱을 설치·사용함으로써 본 방침에 동의하는 것으로 간주됩니다.</p>
+    <p>본 방침은 음악·동영상 재생 애플리케이션 <strong>XXII player</strong>(이하 “앱”)가 이용자의 정보를 어떻게 처리하는지를 설명합니다. 앱을 설치·사용함으로써 본 방침에 동의하는 것으로 간주됩니다.</p>
 
     <h3>1. 핵심 요약</h3>
     <ul>
-      <li>앱은 <strong>이용자 계정을 만들지 않으며</strong>, 로그인·회원가입이 없습니다.</li>
-      <li>기기에 저장된 <strong>음악 파일, 재생목록, 편집한 제목·아티스트·커버 이미지</strong>는 <strong>이용자의 기기에만 저장</strong>되며 외부로 전송·업로드되지 않습니다.</li>
+      <li>앱의 대부분 기능은 <strong>계정 없이</strong> 사용할 수 있습니다. 다만 <strong>선택적으로 이메일·비밀번호 계정</strong>을 만들어 재생목록을 클라우드에 백업/복원할 수 있습니다.</li>
+      <li>기기에 저장된 <strong>음악·동영상 파일, 편집한 커버 이미지</strong>는 <strong>이용자의 기기에만 저장</strong>되며 외부로 전송·업로드되지 않습니다.</li>
+      <li>계정에 로그인하고 <strong>백업을 실행한 경우에 한해</strong>, 재생목록 정보(재생목록 이름, 각 곡의 제목·아티스트·앨범·재생시간 등 <strong>메타데이터</strong>)가 이용자 <strong>본인 계정</strong>으로 클라우드(Google Firebase)에 저장됩니다. <strong>음악·동영상 파일 자체는 업로드되지 않습니다.</strong></li>
       <li>앱 개선을 위해 <strong>익명화된 사용 통계</strong>를 Google 애널리틱스(Firebase)를 통해 수집합니다.</li>
+      <li>유료 기능(<strong>XXII Pro</strong>)은 Google Play 인앱 결제로 제공됩니다.</li>
       <li>앱은 <strong>광고를 표시하지 않으며</strong>, 개인정보를 판매하지 않습니다.</li>
     </ul>
 
-    <h3>2. 수집하지 않는 정보 (기기 내 저장)</h3>
+    <h3>2. 기기 내에만 저장되는 정보</h3>
     <p>다음 정보는 <strong>이용자 기기 내부에만</strong> 저장되며, 개발자나 제3자에게 전송되지 않습니다.</p>
     <ul>
-      <li><span class="tag">로컬</span>기기의 음악/오디오 파일 — 재생 목적으로만 읽습니다.</li>
-      <li><span class="tag">로컬</span>이용자가 만든 재생목록 및 순서 설정.</li>
+      <li><span class="tag">로컬</span>기기의 음악/오디오 및 동영상 파일 — 재생 목적으로만 읽습니다.</li>
       <li><span class="tag">로컬</span>이용자가 편집한 곡 제목·아티스트명·앨범 커버 이미지(직접 선택한 이미지는 앱 내부 저장소에 복사되어 보관).</li>
+      <li><span class="tag">로컬</span>이퀄라이저·오디오 효과 설정, 재생목록 무작위 재생 설정 등 앱 환경설정.</li>
+      <li><span class="tag">로컬</span>이용자가 만든 재생목록 — <em>백업을 실행하지 않는 한</em> 기기에만 저장됩니다.</li>
     </ul>
 
-    <h3>3. 수집하는 정보 (사용 통계)</h3>
+    <h3>3. 계정 및 인증 (선택 사항)</h3>
+    <p>이용자는 원할 경우 이메일과 비밀번호로 계정을 만들 수 있습니다. 계정 기능은 <strong>Google Firebase Authentication</strong>으로 처리됩니다.</p>
+    <ul>
+      <li><span class="tag cloud">클라우드</span>계정 생성·로그인 시 <strong>이메일 주소</strong>가 Firebase에 저장됩니다. 비밀번호는 Firebase가 안전하게 관리하며 개발자는 접근할 수 없습니다.</li>
+      <li>비밀번호 재설정 시 입력한 이메일로 재설정 메일이 발송됩니다.</li>
+      <li>계정은 전적으로 선택 사항이며, 계정 없이도 재생·재생목록·이퀄라이저 등 로컬 기능을 모두 사용할 수 있습니다.</li>
+    </ul>
+
+    <h3>4. 재생목록 클라우드 백업 (선택 사항)</h3>
+    <p>로그인한 상태에서 이용자가 직접 <strong>“백업”</strong>을 실행하면, 다음 정보가 <strong>Google Cloud Firestore</strong>의 이용자 계정 영역(<code>users/{계정ID}</code>)에 저장되어 다른 기기에서 <strong>“복원”</strong>할 수 있습니다.</p>
+    <ul>
+      <li><span class="tag cloud">클라우드</span>재생목록 이름 및 곡 순서, 무작위 재생 설정.</li>
+      <li><span class="tag cloud">클라우드</span>각 곡의 메타데이터 스냅샷: 제목·아티스트·앨범·재생시간.</li>
+    </ul>
+    <div class="note">
+      🔒 <strong>업로드되지 않는 것</strong>: 실제 음악·동영상 <strong>파일</strong>과 <strong>커버 이미지</strong>는 클라우드로 전송되지 않습니다. 백업 데이터는 <strong>본인 계정으로만</strong> 접근할 수 있으며, 백업·복원은 이용자가 직접 실행할 때만 이루어집니다.
+    </div>
+
+    <h3>5. 인앱 결제 (XXII Pro)</h3>
+    <p>이퀄라이저·오디오 효과, 동영상 화면 속 화면(PIP) 및 백그라운드 재생 등 일부 기능은 유료(<strong>XXII Pro</strong>)로 제공되며 <strong>Google Play 인앱 결제</strong>를 통해 판매됩니다.</p>
+    <ul>
+      <li>결제 처리와 결제 수단(카드 등) 정보는 <strong>Google Play가 처리</strong>합니다. 앱은 카드번호 등 결제 정보를 수집·저장하지 않습니다.</li>
+      <li>앱은 구매 완료 여부(이용 권한)만 확인하며, 구매 관련 이벤트(구매 시작·완료, 결제 금액·통화·상품 ID)는 아래 6항의 익명 통계로 기록될 수 있습니다.</li>
+    </ul>
+
+    <h3>6. 수집하는 정보 (사용 통계)</h3>
     <p>앱은 이용 현황 파악 및 품질 개선을 위해 <strong>Google 애널리틱스(Google Analytics for Firebase)</strong>를 사용하여 다음과 같은 익명·집계 정보를 수집합니다.</p>
     <ul>
-      <li><strong>사용 활동 이벤트</strong>: 화면 조회, 재생/무작위 재생, 검색 실행, 재생목록 생성·곡 추가, 곡 정보 편집, 커버 변경 등 <em>어떤 기능이 사용되었는지</em>에 대한 기록.</li>
+      <li><strong>사용 활동 이벤트</strong>: 화면 조회, 재생/무작위 재생, 검색 실행, 재생목록 생성·곡 추가, 곡 정보 편집, 커버 변경, 이퀄라이저 사용, 로그인·회원가입, 유료 구매(구매 시작·완료, 금액·통화·상품 ID) 등 <em>어떤 기능이 사용되었는지</em>에 대한 기록.</li>
       <li><strong>자동 수집 정보</strong>: 앱 인스턴스 식별자, 기기 모델·제조사, 운영체제 버전, 앱 버전, 대략적 위치(국가/지역, IP 기반), 세션·사용 시간, 언어 설정.</li>
     </ul>
     <div class="note">
-      🔒 <strong>수집하지 않는 것</strong>: 검색어의 실제 <strong>내용</strong>이나 이용자의 <strong>음악 파일명·곡 정보</strong>는 통계로 전송되지 않습니다. “검색을 했다”는 사실만 기록되며 입력한 검색어 텍스트는 전송되지 않습니다.
+      🔒 <strong>통계로 수집하지 않는 것</strong>: 검색어의 실제 <strong>내용</strong>이나 이용자의 <strong>음악·동영상 파일명·곡 정보</strong>는 통계로 전송되지 않습니다. “검색을 했다”는 사실만 기록되며 입력한 검색어 텍스트는 전송되지 않습니다. (곡 메타데이터가 저장되는 유일한 경우는 이용자가 직접 실행하는 4항의 재생목록 백업이며, 이는 통계와 별개로 본인 계정에만 저장됩니다.)
     </div>
 
-    <h3>4. 권한 사용</h3>
+    <h3>7. 권한 사용</h3>
     <ul>
-      <li><strong>오디오/미디어 접근</strong>(READ_MEDIA_AUDIO / 저장소): 기기의 음악 파일을 찾아 재생하기 위해 사용합니다. 파일은 외부로 전송되지 않습니다.</li>
+      <li><strong>오디오/미디어 접근</strong>(READ_MEDIA_AUDIO / 저장소): 기기의 음악 파일을 찾아 재생하기 위해 사용합니다.</li>
+      <li><strong>동영상 접근</strong>(READ_MEDIA_VIDEO): 기기의 동영상 파일을 찾아 재생하기 위해 사용합니다.</li>
       <li><strong>알림</strong>(POST_NOTIFICATIONS): 재생 컨트롤 알림을 표시하기 위해 사용합니다.</li>
-      <li><strong>포그라운드 서비스</strong>: 화면을 꺼도 음악을 계속 재생하기 위해 사용합니다.</li>
+      <li><strong>포그라운드 서비스</strong>: 화면을 꺼도 음악 또는 (Pro) 동영상을 계속 재생하기 위해 사용합니다.</li>
+      <li><strong>오디오 설정</strong>(MODIFY_AUDIO_SETTINGS): 이퀄라이저·베이스 부스트·볼륨 부스트 등 오디오 효과를 적용하기 위해 사용합니다.</li>
       <li><strong>사진 선택</strong>: 앨범 커버로 사용할 이미지를 이용자가 직접 선택할 때만 접근하며, 선택한 이미지는 기기 내부에만 저장됩니다.</li>
+      <li><strong>인터넷</strong>: 계정 인증, 재생목록 클라우드 백업/복원, 사용 통계 및 인앱 결제 처리를 위해 사용합니다.</li>
     </ul>
 
-    <h3>5. Android Auto</h3>
+    <h3>8. 동영상 재생</h3>
+    <p>앱은 기기의 동영상 파일을 재생할 수 있으며, 화면 속 화면(PIP) 및 백그라운드 재생을 지원합니다(Pro 기능). 동영상 파일은 재생 목적으로만 기기에서 읽으며 외부로 전송되지 않습니다.</p>
+
+    <h3>9. Android Auto</h3>
     <p>앱은 Android Auto를 지원합니다. 차량 화면에서의 재생·탐색은 위와 동일한 방식으로 처리되며, 추가로 수집하는 개인정보는 없습니다.</p>
 
-    <h3>6. 제3자 서비스</h3>
-    <p>앱은 Google LLC가 제공하는 Firebase(Google 애널리틱스)를 사용합니다. 해당 서비스의 데이터 처리에 관한 사항은 아래 정책을 참고하세요.</p>
+    <h3>10. 제3자 서비스</h3>
+    <p>앱은 Google LLC가 제공하는 다음 서비스를 사용합니다. 각 서비스의 데이터 처리에 관한 사항은 아래 정책을 참고하세요.</p>
     <ul>
+      <li>Google 애널리틱스(Firebase Analytics) · Firebase Authentication · Cloud Firestore · Google Play 결제(Google Play Billing).</li>
       <li>Google 개인정보처리방침: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
       <li>Firebase 데이터 처리: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></li>
     </ul>
 
-    <h3>7. 데이터 보관 기간</h3>
-    <p>기기 내 데이터(재생목록·설정 등)는 이용자가 앱을 삭제하면 함께 삭제됩니다. 애널리틱스 데이터는 Google의 보관 정책에 따라 일정 기간 후 자동 삭제됩니다.</p>
-
-    <h3>8. 이용자의 선택</h3>
+    <h3>11. 데이터 보관 및 삭제</h3>
     <ul>
+      <li>기기 내 데이터(음악·동영상 접근, 재생목록·설정 등)는 이용자가 앱을 삭제하면 함께 삭제됩니다.</li>
+      <li>계정 및 클라우드 백업 데이터(이메일, 백업된 재생목록 메타데이터)는 계정이 유지되는 동안 보관됩니다.</li>
+      <li><strong>계정·백업 데이터 삭제 요청</strong>: 아래 문의 이메일로 요청하시면 계정과 클라우드에 저장된 백업 데이터를 삭제해 드립니다.</li>
+      <li>애널리틱스 데이터는 Google의 보관 정책에 따라 일정 기간 후 자동 삭제됩니다.</li>
+    </ul>
+
+    <h3>12. 이용자의 선택</h3>
+    <ul>
+      <li>재생목록 백업을 실행하지 않으면 클라우드에는 아무 데이터도 저장되지 않습니다.</li>
+      <li>앱에서 <strong>로그아웃</strong>하면 기기에서 계정 연결이 해제됩니다. 계정 자체의 삭제는 11항의 방법으로 요청할 수 있습니다.</li>
       <li>앱을 삭제하면 기기 내 모든 앱 데이터가 제거되고 이후 통계 수집이 중단됩니다.</li>
       <li>Android 기기 설정 → 개인정보/광고에서 <strong>광고 ID 재설정 또는 삭제</strong>를 통해 맞춤형 통계를 제한할 수 있습니다.</li>
     </ul>
 
-    <h3>9. 아동의 개인정보</h3>
+    <h3>13. 아동의 개인정보</h3>
     <p>앱은 만 13세 미만 아동을 주 대상으로 하지 않으며, 아동으로부터 고의로 개인정보를 수집하지 않습니다.</p>
 
-    <h3>10. 보안</h3>
-    <p>수집되는 통계 정보는 Google의 보안 인프라를 통해 전송·보관됩니다. 다만 인터넷을 통한 어떠한 전송도 100% 안전을 보장하지는 못합니다.</p>
+    <h3>14. 보안</h3>
+    <p>수집·저장되는 정보(계정·백업·통계)는 Google의 보안 인프라를 통해 전송·보관됩니다. 다만 인터넷을 통한 어떠한 전송도 100% 안전을 보장하지는 못합니다.</p>
 
-    <h3>11. 방침의 변경</h3>
-    <p>본 방침은 필요에 따라 변경될 수 있으며, 변경 시 본 페이지에 게시하고 시행일을 갱신합니다.</p>
+    <h3>15. 방침의 변경</h3>
+    <p>본 방침은 필요에 따라 변경될 수 있으며, 변경 시 본 페이지에 게시하고 시행일·개정일을 갱신합니다.</p>
 
-    <h3>12. 문의처</h3>
-    <p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.<br>
+    <h3>16. 문의처</h3>
+    <p>개인정보 처리 및 계정·데이터 삭제에 관한 문의는 아래로 연락해 주세요.<br>
       이메일: <a href="mailto:scbaek65@gmail.com">scbaek65@gmail.com</a></p>
   </section>
 
@@ -148,74 +191,116 @@
   <!-- ============================ English ============================ -->
   <section class="doc" id="en">
     <h2>Privacy Policy</h2>
-    <p class="updated">App: <strong>XXII player</strong> · Effective date: July 4, 2026</p>
+    <p class="updated">App: <strong>XXII player</strong> · Effective date: July 4, 2026 · Last updated: July 11, 2026</p>
 
-    <p>This Privacy Policy explains how the music player application <strong>XXII player</strong> (the “App”) handles your information. By installing and using the App, you agree to this Policy.</p>
+    <p>This Privacy Policy explains how the music &amp; video player application <strong>XXII player</strong> (the “App”) handles your information. By installing and using the App, you agree to this Policy.</p>
 
     <h3>1. Summary</h3>
     <ul>
-      <li>The App has <strong>no user accounts</strong> — there is no sign-up or login.</li>
-      <li>Your <strong>music files, playlists, and edited titles / artists / cover images</strong> are stored <strong>only on your device</strong> and are never uploaded or transmitted.</li>
+      <li>Most features work <strong>without an account</strong>. Optionally, you can create an <strong>email &amp; password account</strong> to back up and restore your playlists in the cloud.</li>
+      <li>Your <strong>music &amp; video files and edited cover images</strong> are stored <strong>only on your device</strong> and are never uploaded or transmitted.</li>
+      <li><strong>Only if you sign in and run a backup</strong>, your playlist information (playlist names and each track’s <strong>metadata</strong> — title, artist, album, duration) is stored in the cloud (Google Firebase) under <strong>your own account</strong>. <strong>The music/video files themselves are never uploaded.</strong></li>
       <li>We collect <strong>anonymous, aggregated usage statistics</strong> through Google Analytics for Firebase to improve the App.</li>
+      <li>Paid features (<strong>XXII Pro</strong>) are offered through Google Play in-app purchases.</li>
       <li>The App <strong>shows no ads</strong> and does not sell your personal information.</li>
     </ul>
 
-    <h3>2. Information we do NOT collect (kept on your device)</h3>
+    <h3>2. Information kept on your device only</h3>
     <p>The following stays <strong>on your device only</strong> and is never sent to the developer or any third party:</p>
     <ul>
-      <li><span class="tag">LOCAL</span>Audio/music files on your device — read only for playback.</li>
-      <li><span class="tag">LOCAL</span>Playlists you create and their ordering settings.</li>
+      <li><span class="tag">LOCAL</span>Audio/music and video files on your device — read only for playback.</li>
       <li><span class="tag">LOCAL</span>Custom song titles, artist names, and cover images (images you pick are copied into the App’s private storage).</li>
+      <li><span class="tag">LOCAL</span>Equalizer / audio-effect settings and other app preferences.</li>
+      <li><span class="tag">LOCAL</span>Playlists you create — kept on your device <em>unless you run a backup</em>.</li>
     </ul>
 
-    <h3>3. Information we collect (usage statistics)</h3>
+    <h3>3. Account &amp; authentication (optional)</h3>
+    <p>You may optionally create an account with an email and password. Accounts are handled by <strong>Google Firebase Authentication</strong>.</p>
+    <ul>
+      <li><span class="tag cloud">CLOUD</span>When you create an account or sign in, your <strong>email address</strong> is stored in Firebase. Passwords are securely managed by Firebase and are not accessible to the developer.</li>
+      <li>If you reset your password, a reset email is sent to the address you provide.</li>
+      <li>An account is entirely optional; you can use all local features (playback, playlists, equalizer) without one.</li>
+    </ul>
+
+    <h3>4. Playlist cloud backup (optional)</h3>
+    <p>While signed in, if you tap <strong>“Back up”</strong>, the following is stored in <strong>Google Cloud Firestore</strong> under your account area (<code>users/{yourID}</code>) so you can <strong>“Restore”</strong> it on another device:</p>
+    <ul>
+      <li><span class="tag cloud">CLOUD</span>Playlist names, track order, and shuffle setting.</li>
+      <li><span class="tag cloud">CLOUD</span>A metadata snapshot of each track: title, artist, album, duration.</li>
+    </ul>
+    <div class="note">
+      🔒 <strong>What is NOT uploaded</strong>: your actual music/video <strong>files</strong> and <strong>cover images</strong> are never sent to the cloud. Backup data is accessible <strong>only from your own account</strong>, and backup/restore happen only when you trigger them.
+    </div>
+
+    <h3>5. In-app purchases (XXII Pro)</h3>
+    <p>Some features — the equalizer &amp; audio effects, and video picture-in-picture and background playback — are paid (<strong>XXII Pro</strong>) and sold through <strong>Google Play in-app purchases</strong>.</p>
+    <ul>
+      <li>Payment and payment-method (card, etc.) information is <strong>handled by Google Play</strong>. The App does not collect or store payment details.</li>
+      <li>The App only checks your purchase/entitlement status. Purchase-related events (purchase start/complete, price, currency, product ID) may be recorded as anonymous statistics per Section 6.</li>
+    </ul>
+
+    <h3>6. Information we collect (usage statistics)</h3>
     <p>To understand how the App is used and to improve it, we use <strong>Google Analytics for Firebase</strong> to collect the following anonymous, aggregated data:</p>
     <ul>
-      <li><strong>Usage events</strong>: screen views and <em>which features are used</em> — e.g. play/shuffle, running a search, creating a playlist, adding songs, editing track info, changing a cover.</li>
+      <li><strong>Usage events</strong>: screen views and <em>which features are used</em> — e.g. play/shuffle, running a search, creating a playlist, adding songs, editing track info, changing a cover, using the equalizer, signing in / signing up, and purchases (purchase start/complete, price, currency, product ID).</li>
       <li><strong>Automatically collected</strong>: app-instance identifier, device model/manufacturer, OS version, app version, approximate location (country/region, from IP), session and engagement time, language setting.</li>
     </ul>
     <div class="note">
-      🔒 <strong>What we do NOT send</strong>: the actual <strong>text of your searches</strong> and the <strong>names or metadata of your music</strong> are not transmitted. We record only that “a search happened,” not the query you typed.
+      🔒 <strong>What we do NOT send to analytics</strong>: the actual <strong>text of your searches</strong> and the <strong>names or metadata of your music/video</strong> are not transmitted. We record only that “a search happened,” not the query you typed. (The only case where track metadata is stored is the playlist backup in Section 4, which you trigger yourself and which stays in your own account, separate from analytics.)
     </div>
 
-    <h3>4. Permissions</h3>
+    <h3>7. Permissions</h3>
     <ul>
-      <li><strong>Audio/media access</strong> (READ_MEDIA_AUDIO / storage): to find and play the audio files on your device. Files are never transmitted.</li>
+      <li><strong>Audio/media access</strong> (READ_MEDIA_AUDIO / storage): to find and play the audio files on your device.</li>
+      <li><strong>Video access</strong> (READ_MEDIA_VIDEO): to find and play the video files on your device.</li>
       <li><strong>Notifications</strong> (POST_NOTIFICATIONS): to show playback controls.</li>
-      <li><strong>Foreground service</strong>: to keep music playing when the screen is off.</li>
+      <li><strong>Foreground service</strong>: to keep music — or (Pro) video — playing when the screen is off.</li>
+      <li><strong>Audio settings</strong> (MODIFY_AUDIO_SETTINGS): to apply audio effects such as the equalizer, bass boost and volume boost.</li>
       <li><strong>Photo picker</strong>: accessed only when you choose an image to use as a cover; the chosen image is stored on your device only.</li>
+      <li><strong>Internet</strong>: for account authentication, playlist cloud backup/restore, usage analytics and in-app purchase processing.</li>
     </ul>
 
-    <h3>5. Android Auto</h3>
+    <h3>8. Video playback</h3>
+    <p>The App can play video files from your device, with picture-in-picture and background playback (Pro features). Video files are read from your device for playback only and are never transmitted.</p>
+
+    <h3>9. Android Auto</h3>
     <p>The App supports Android Auto. Playback and browsing on the car screen work the same way described above, and no additional personal data is collected.</p>
 
-    <h3>6. Third-party services</h3>
-    <p>The App uses Firebase (Google Analytics) provided by Google LLC. Please refer to Google’s policies for how that service processes data:</p>
+    <h3>10. Third-party services</h3>
+    <p>The App uses the following services provided by Google LLC. Please refer to Google’s policies for how they process data:</p>
     <ul>
+      <li>Google Analytics for Firebase · Firebase Authentication · Cloud Firestore · Google Play Billing.</li>
       <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
       <li>Firebase data processing: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></li>
     </ul>
 
-    <h3>7. Data retention</h3>
-    <p>On-device data (playlists, settings) is deleted when you uninstall the App. Analytics data is automatically deleted after a period defined by Google’s retention settings.</p>
-
-    <h3>8. Your choices</h3>
+    <h3>11. Data retention &amp; deletion</h3>
     <ul>
+      <li>On-device data (media access, playlists, settings) is deleted when you uninstall the App.</li>
+      <li>Account and cloud-backup data (your email, backed-up playlist metadata) is retained while your account exists.</li>
+      <li><strong>Account/backup deletion requests</strong>: email us at the address below and we will delete your account and the backup data stored in the cloud.</li>
+      <li>Analytics data is automatically deleted after a period defined by Google’s retention settings.</li>
+    </ul>
+
+    <h3>12. Your choices</h3>
+    <ul>
+      <li>If you never run a backup, nothing is stored in the cloud.</li>
+      <li><strong>Signing out</strong> disconnects your account on the device. To delete the account itself, use the method in Section 11.</li>
       <li>Uninstalling the App removes all on-device app data and stops any further analytics collection.</li>
       <li>You can limit personalized analytics by <strong>resetting or deleting your Advertising ID</strong> in your Android device settings (Privacy / Ads).</li>
     </ul>
 
-    <h3>9. Children’s privacy</h3>
+    <h3>13. Children’s privacy</h3>
     <p>The App is not directed to children under 13 and does not knowingly collect personal information from children.</p>
 
-    <h3>10. Security</h3>
-    <p>Collected statistics are transmitted and stored through Google’s secure infrastructure. However, no method of transmission over the Internet is 100% secure.</p>
+    <h3>14. Security</h3>
+    <p>Collected and stored information (account, backup, statistics) is transmitted and stored through Google’s secure infrastructure. However, no method of transmission over the Internet is 100% secure.</p>
 
-    <h3>11. Changes to this Policy</h3>
-    <p>We may update this Policy from time to time. Changes will be posted on this page with an updated effective date.</p>
+    <h3>15. Changes to this Policy</h3>
+    <p>We may update this Policy from time to time. Changes will be posted on this page with an updated effective / last-updated date.</p>
 
-    <h3>12. Contact</h3>
-    <p>For any questions about this Privacy Policy, please contact:<br>
+    <h3>16. Contact</h3>
+    <p>For any questions about this Privacy Policy or to request account/data deletion, please contact:<br>
       Email: <a href="mailto:scbaek65@gmail.com">scbaek65@gmail.com</a></p>
   </section>
 </div>
