@@ -65,7 +65,7 @@
 <meta name="language" content="Korean" />
 
 <!-- 테마 -->
-<meta name="theme-color" content="#0a0a0f" />
+<meta name="theme-color" content="#161826" />
 
 <!-- =========================================================
 OPEN GRAPH (카카오톡, 페이스북, 디스코드 등)
@@ -234,223 +234,245 @@ TWITTER(X)
 <link rel="alternate" hreflang="ko" href="https://baseonsell.co.kr/" />
 <link rel="alternate" hreflang="x-default" href="https://baseonsell.co.kr/" />
 
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+<!-- =========================================================
+디자인 시스템 — Nocturne (브랜드 레드 액센트)
+========================================================= -->
 
-  body { font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif; background: #0a0a0f; color: #fff; line-height: 1.6; overflow-x: hidden; }
-
-  /* Navigation */
-  nav { position: fixed; top: 0; width: 100%; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(10px); z-index: 1000; }
-
-  .logo { font-size: 24px; font-weight: 800; background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-  .nav-links { display: flex; gap: 30px; list-style: none; }
-
-  .nav-links a { color: #ccc; text-decoration: none; transition: color 0.3s; }
-
-  .nav-links a:hover { color: #ec4899; }
-
-  /* Hero Section */
-  .hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 100px 60px 60px; background: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.3), transparent 50%), radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3), transparent 50%); gap: 50px; flex-wrap: wrap; }
-
-  .hero-content { flex: 1; min-width: 300px; }
-
-  .hero h1 { font-size: 64px; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(135deg, #fff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-  .hero p { font-size: 20px; color: #aaa; margin-bottom: 40px; max-width: 500px; }
-
-  .download-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
-
-  .btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; gap: 10px; }
-
-  .btn-primary { background: linear-gradient(135deg, #a855f7, #ec4899); color: white; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4); }
-
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(168, 85, 247, 0.6); }
-
-  .btn-secondary { background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.2); }
-
-  .btn-secondary:hover { background: rgba(255, 255, 255, 0.2); }
-
-  /* Phone Mockup */
-  .phone-mockup { flex: 1; display: flex; justify-content: center; min-width: 300px; }
-
-  .phone { width: 280px; height: 560px; background: #1a1a2e; border-radius: 40px; padding: 15px; box-shadow: 0 30px 60px rgba(168, 85, 247, 0.3); border: 3px solid #2a2a3e; position: relative; animation: float 4s ease-in-out infinite; }
-
-  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-
-  .phone-screen { width: 100%; height: 100%; background: linear-gradient(135deg, #1e1b4b, #831843); border-radius: 28px; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-
-  .album-cover { width: 180px; height: 180px; background: linear-gradient(135deg, #a855f7, #ec4899); border-radius: 20px; margin-bottom: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; font-size: 60px; animation: rotate 10s linear infinite; }
-
-  @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-  .song-title { font-size: 18px; font-weight: 700; margin-bottom: 5px; }
-
-  .artist-name { font-size: 14px; color: #ccc; margin-bottom: 20px; }
-
-  .progress-bar { width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-bottom: 20px; }
-
-  .progress { width: 60%; height: 100%; background: linear-gradient(90deg, #a855f7, #ec4899); border-radius: 2px; }
-
-  .controls { display: flex; gap: 25px; font-size: 24px; }
-
-  .play-btn { width: 50px; height: 50px; background: white; color: #1e1b4b; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-
-  /* Features */
-  .features { padding: 100px 60px; background: #0a0a0f; }
-
-  .section-title { text-align: center; font-size: 48px; margin-bottom: 60px; background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-
-  .feature-card { background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1)); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 20px; transition: transform 0.3s, border-color 0.3s; }
-
-  .feature-card:hover { transform: translateY(-10px); border-color: rgba(168, 85, 247, 0.5); }
-
-  .feature-icon { font-size: 40px; margin-bottom: 20px; }
-
-  .feature-card h3 { font-size: 22px; margin-bottom: 15px; }
-
-  .feature-card p { color: #aaa; }
-
-  /* Stats */
-  .stats { padding: 80px 60px; background: linear-gradient(135deg, #1e1b4b, #831843); display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; }
-
-  .stat-item { text-align: center; }
-
-  .stat-number { font-size: 56px; font-weight: 800; background: linear-gradient(135deg, #fff, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-  .stat-label { font-size: 16px; color: #ccc; margin-top: 10px; }
-
-  /* CTA */
-  .cta { padding: 100px 60px; text-align: center; background: #0a0a0f; }
-
-  .cta h2 { font-size: 48px; margin-bottom: 20px; }
-
-  .cta p { font-size: 18px; color: #aaa; margin-bottom: 40px; }
-
-  /* Footer */
-  footer { padding: 40px 60px; background: #050508; text-align: center; color: #666; border-top: 1px solid rgba(255,255,255,0.1); }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    nav { padding: 15px 20px; }
-    .nav-links { display: none; }
-    .hero { padding: 100px 20px 60px; }
-    .hero h1 { font-size: 40px; }
-    .features, .cta, .stats { padding: 60px 20px; }
-    .section-title, .cta h2 { font-size: 32px; }
-  }
-</style>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+KR:wght@400;500&display=swap"
+/>
+<link rel="stylesheet" href="css/nocturne.css" />
+<link rel="stylesheet" href="css/landing.css" />
 </head>
 <body>
 
-<nav>
-  <div class="logo">🎵 XXII Player</div>
-  <ul class="nav-links">
-    <li><a href="#features">기능</a></li>
-    <li><a href="#stats">통계</a></li>
-    <li><a href="#download">다운로드</a></li>
-  </ul>
+<!-- ============================ 상단 바 ============================ -->
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 256 256" fill="currentColor"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216Zm112-114.75L136,82.05V50.75l64,19.2Z"/></svg>
+      </span>
+      <span class="brand-name">XXII player</span>
+    </a>
+
+    <ul class="topbar-nav">
+      <li><a href="#features">기능</a></li>
+      <li><a href="#stats">수치</a></li>
+      <li><a href="#download">다운로드</a></li>
+    </ul>
+
+    <a class="btn btn-accent" href="https://play.google.com/store/apps/details?id=com.media.xxiiplayer">
+      <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"/></svg>
+      Google Play
+    </a>
+  </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- ============================ 히어로 ============================ -->
 <section class="hero">
-  <div class="hero-content">
-    <h1>나의 스마트폰 속 음악,<br>드라이브와 함께 즐기세요!</h1>
-    <p>XXII Player는 음악 감상을 좋아하는 개발자가, 드라이브 중에 사용하기 위해 만든 뮤직 플레이어입니다. 내가 다운받은 음악과 직관적인 UI로 쉽게 사용해보세요.</p>
-    <div class="download-buttons" id="download">
-      <a href="https://play.google.com/store/apps/details?id=com.media.xxiiplayer" class="btn btn-primary">▶ Google Play</a>
-      <a href="#" class="btn btn-secondary">⬇ APK 다운로드</a>
+  <div class="hero-copy">
+    <p class="kicker">Android Auto · Local player</p>
+    <h1>나의 스마트폰 속 음악,<br>드라이브와 함께.</h1>
+    <hr class="mark mark-lg">
+    <p class="hero-lead">
+      XXII player는 음악 감상을 좋아하는 개발자가 드라이브 중에 쓰려고 만든
+      로컬 뮤직 플레이어입니다. 내려받은 음악을 그대로, 조용하고 촘촘한
+      인터페이스로 재생합니다.
+    </p>
+
+    <div class="hero-actions" id="download">
+      <a class="btn btn-accent btn-lg" href="https://play.google.com/store/apps/details?id=com.media.xxiiplayer">
+        <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"/></svg>
+        Google Play에서 받기
+      </a>
+      <a class="btn btn-lg" href="#features">
+        <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg>
+        기능 살펴보기
+      </a>
+    </div>
+
+    <div class="hero-meta">
+      <span>MP3 · FLAC</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>Android Auto</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>오프라인 재생</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>무료</span>
     </div>
   </div>
-  <div class="phone-mockup">
-    <div class="phone">
-      <div class="phone-screen">
-        <div class="album-cover">🎶</div>
-        <div class="song-title">Sample Music</div>
-        <div class="artist-name">Somebody Artist</div>
-        <div class="progress-bar">
-          <div class="progress"></div>
-        </div>
-        <div class="controls">
-          <span>⏮</span>
-          <div class="play-btn">▶</div>
-          <span>⏭</span>
-        </div>
+
+  <!-- 폰 목업 — 앱의 Now playing 화면 -->
+  <div class="phone" aria-hidden="true">
+    <div class="screen">
+      <div class="status-row"><span>3:03</span><span class="sig">▮▮▮</span></div>
+
+      <div class="screen-head">
+        <svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"/></svg>
+        <span class="kicker">Now playing</span>
+        <span class="folder">Music</span>
+      </div>
+
+      <div class="cover">
+        <svg viewBox="0 0 256 256" fill="currentColor"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216Zm112-114.75L136,82.05V50.75l64,19.2Z"/></svg>
+      </div>
+
+      <div class="np-title">Midnight Drive</div>
+      <div class="np-artist">The Night Owls</div>
+
+      <div class="seek">
+        <div class="seek-fill"></div>
+        <div class="seek-knob"></div>
+      </div>
+      <div class="seek-times"><span>0:36</span><span>0:42</span></div>
+
+      <div class="transport">
+        <span class="tp-skip"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M208,47.88V208.12a16,16,0,0,1-24.43,13.43L64,146.77V216a8,8,0,0,1-16,0V40a8,8,0,0,1,16,0v69.23L183.57,34.45A16,16,0,0,1,208,47.88Zm-16,0L69.87,128,192,208.12Z"/></svg></span>
+        <span class="tp-ten">
+          <svg viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a96,96,0,0,1-94.71,96H128A95.38,95.38,0,0,1,62.1,197.8a8,8,0,0,1,11-11.63A80,80,0,1,0,71.43,71.39a3.07,3.07,0,0,1-.26.25L44.59,96H72a8,8,0,0,1,0,16H32a8,8,0,0,1-8-8V64a8,8,0,0,1,16,0V85.8L60.25,60.16A96,96,0,0,1,224,128Z"/></svg>
+          <span>10</span>
+        </span>
+        <span class="tp-play">
+          <svg viewBox="0 0 256 256" fill="currentColor"><path d="M200,32H160a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16h40a16,16,0,0,0,16-16V48A16,16,0,0,0,200,32Zm0,176H160V48h40ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Zm0,176H56V48H96Z"/></svg>
+        </span>
+        <span class="tp-ten">
+          <svg viewBox="0 0 256 256" fill="currentColor" style="transform:scaleX(-1)"><path d="M224,128a96,96,0,0,1-94.71,96H128A95.38,95.38,0,0,1,62.1,197.8a8,8,0,0,1,11-11.63A80,80,0,1,0,71.43,71.39a3.07,3.07,0,0,1-.26.25L44.59,96H72a8,8,0,0,1,0,16H32a8,8,0,0,1-8-8V64a8,8,0,0,1,16,0V85.8L60.25,60.16A96,96,0,0,1,224,128Z"/></svg>
+          <span>10</span>
+        </span>
+        <span class="tp-skip"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M208,40V216a8,8,0,0,1-16,0V146.77L72.43,221.55A16,16,0,0,1,48,208.12V47.88A16,16,0,0,1,72.43,34.45L192,109.23V40a8,8,0,0,1,16,0ZM64,47.88V208.12L186.13,128Z"/></svg></span>
+      </div>
+
+      <div class="screen-tabs">
+        <span class="screen-tab is-active">
+          <svg viewBox="0 0 256 256" fill="currentColor"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216Zm112-114.75L136,82.05V50.75l64,19.2Z"/></svg>
+          <span>Songs</span>
+        </span>
+        <span class="screen-tab">
+          <svg viewBox="0 0 256 256" fill="currentColor"><path d="M251.77,73a8,8,0,0,0-8.21.39L208,97.05V72a16,16,0,0,0-16-16H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V159l35.56,23.71A8,8,0,0,0,248,184a8,8,0,0,0,8-8V80A8,8,0,0,0,251.77,73ZM192,184H32V72H192V184Zm48-22.95-32-21.33V116.28L240,95Z"/></svg>
+          <span>Videos</span>
+        </span>
+        <span class="screen-tab">
+          <svg viewBox="0 0 256 256" fill="currentColor"><path d="M216,128a8,8,0,0,1-8,8H48a8,8,0,0,1,0-16H208A8,8,0,0,1,216,128ZM48,72H208a8,8,0,0,0,0-16H48a8,8,0,0,0,0,16ZM208,184H48a8,8,0,0,0,0,16H208a8,8,0,0,0,0-16Z"/></svg>
+          <span>Playlists</span>
+        </span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Features -->
-<section class="features" id="features">
-  <h2 class="section-title">강력한 기능</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">🎧</div>
+<!-- ============================ 기능 ============================ -->
+<section class="section" id="features">
+  <div class="section-head">
+    <p class="kicker">Features · 06</p>
+    <h2>필요한 것만, 촘촘하게</h2>
+    <hr class="mark mark-lg">
+    <p>화면을 채우는 대신 비웁니다. 목록은 빽빽하고 여백은 짧으며, 강조는 얇은 선 하나로 끝냅니다.</p>
+  </div>
+
+  <div class="features">
+    <article class="feature">
+      <div class="feature-top">
+        <span class="feature-num">01</span>
+        <span class="feature-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216Zm112-114.75L136,82.05V50.75l64,19.2Z"/></svg></span>
+      </div>
       <h3>고음질 사운드</h3>
       <p>FLAC, MP3 등 무손실 오디오 포맷을 지원하여 스튜디오 퀄리티의 음질을 제공합니다.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🎚️</div>
+    </article>
+
+    <article class="feature">
+      <div class="feature-top">
+        <span class="feature-num">02</span>
+        <span class="feature-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M40,88H73a32,32,0,0,0,62,0h81a8,8,0,0,0,0-16H135a32,32,0,0,0-62,0H40a8,8,0,0,0,0,16Zm64-24a16,16,0,1,1-16,16A16,16,0,0,1,104,64ZM216,168H199a32,32,0,0,0-62,0H40a8,8,0,0,0,0,16h97a32,32,0,0,0,62,0h17a8,8,0,0,0,0-16Zm-48,24a16,16,0,1,1,16-16A16,16,0,0,1,168,192Z"/></svg></span>
+      </div>
       <h3>안드로이드 오토 지원</h3>
-      <p>안드로이드 오토로 재생 목록 별 탐색, 검색 기능을 지원합니다.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📚</div>
+      <p>안드로이드 오토에서 재생목록 탐색과 검색을 그대로 사용할 수 있습니다.</p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-top">
+        <span class="feature-num">03</span>
+        <span class="feature-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M120,128a8,8,0,0,1-8,8H24a8,8,0,0,1,0-16h88A8,8,0,0,1,120,128ZM24,72H168a8,8,0,0,0,0-16H24a8,8,0,0,0,0,16ZM112,184H24a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16Zm120-64H208V96a8,8,0,0,0-16,0v24H168a8,8,0,0,0,0,16h24v24a8,8,0,0,0,16,0V136h24a8,8,0,0,0,0-16Z"/></svg></span>
+      </div>
       <h3>스마트 플레이리스트</h3>
-      <p>당신의 임의대로 재생목록을 만들어 플레이리스트를 감상할 수 있습니다.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🌙</div>
-      <h3>다크 모드</h3>
-      <p>눈에 편안한 다크 모드와 다양한 테마로 개성 있게 꾸며보세요.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📱</div>
-      <h3>위젯 지원</h3>
-      <p>상단 컨트롤 패널에서 바로 음악을 컨트롤할 수 있는 다양한 위젯을 제공합니다.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">☁️</div>
-      <h3>클라우드 동기화</h3>
-      <p>여러 기기에서 플레이리스트와 재생 기록을 자동으로 동기화합니다.</p>
-    </div>
+      <p>원하는 대로 재생목록을 만들고, 곡 순서와 무작위 재생까지 직접 정합니다.</p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-top">
+        <span class="feature-num">04</span>
+        <span class="feature-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></svg></span>
+      </div>
+      <h3>메타데이터 편집</h3>
+      <p>곡 제목·아티스트·앨범 커버를 앱 안에서 바로 고쳐 씁니다. 원본 파일은 그대로 둡니다.</p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-top">
+        <span class="feature-num">05</span>
+        <span class="feature-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M251.77,73a8,8,0,0,0-8.21.39L208,97.05V72a16,16,0,0,0-16-16H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V159l35.56,23.71A8,8,0,0,0,248,184a8,8,0,0,0,8-8V80A8,8,0,0,0,251.77,73ZM192,184H32V72H192V184Zm48-22.95-32-21.33V116.28L240,95Z"/></svg></span>
+      </div>
+      <h3>영상 재생</h3>
+      <p>기기에 담긴 동영상도 같은 라이브러리에서 목록으로 정리해 재생합니다.</p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-top">
+        <span class="feature-num">06</span>
+        <span class="feature-icon"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"/></svg></span>
+      </div>
+      <h3>이퀄라이저 · 변환 <span class="tag"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"/></svg>Pro</span></h3>
+      <p>밴드별 이퀄라이저와 베이스·볼륨 부스트, 공간 음향 변환까지 지원합니다.</p>
+    </article>
   </div>
 </section>
 
-<!-- Stats -->
+<!-- ============================ 수치 ============================ -->
 <section class="stats" id="stats">
-  <div class="stat-item">
-    <div class="stat-number">2K+</div>
-    <div class="stat-label">다운로드</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">4.0★</div>
-    <div class="stat-label">평균 평점</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">0+</div>
-    <div class="stat-label">리뷰</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">100+</div>
-    <div class="stat-label">지원 국가</div>
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">2K+</div>
+      <div class="stat-label">다운로드</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4.0</div>
+      <div class="stat-label">평균 평점</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">지원 국가</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">05</div>
+      <div class="stat-label">지원 언어</div>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <h2>무료로 지금금 바로 시작하세요</h2>
-  <p>XXII Player와 함께 나만의 플레이 리스트를 만들어가가세요.</p>
-  <a href="https://play.google.com/store/apps/details?id=com.media.xxiiplayer" class="btn btn-primary">▶ Google Play에서 다운로드</a>
+<!-- ============================ CTA ============================ -->
+<section class="cta-section">
+  <p class="kicker">Get the app</p>
+  <h2>무료로 지금 바로 시작하세요</h2>
+  <hr class="mark mark-lg">
+  <p>XXII player와 함께 나만의 플레이리스트를 만들어가세요. 계정 없이도 로컬 재생은 모두 무료입니다.</p>
+  <div class="hero-actions">
+    <a class="btn btn-accent btn-lg" href="https://play.google.com/store/apps/details?id=com.media.xxiiplayer">
+      <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"/></svg>
+      Google Play에서 다운로드
+    </a>
+  </div>
 </section>
 
-<!-- Footer -->
+<!-- ============================ 푸터 ============================ -->
 <footer>
-  <p>© 2025 XXII Player. All rights reserved.</p>
-  <p style="margin-top: 10px; font-size: 14px;">Made with 💜 for baseonsell@gmail.com</p>
+  <div class="footer-links">
+    <a href="privacy-policy.html">개인정보 처리방침</a>
+    <a href="account-deletion.html">계정 및 데이터 삭제</a>
+    <a href="mailto:scbaek65@gmail.com">문의</a>
+  </div>
+  <p>© 2025 XXII player. All rights reserved.</p>
+  <p>scbaek65@gmail.com</p>
 </footer>
 
 </body>
