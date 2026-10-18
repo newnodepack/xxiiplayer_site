@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://baseonsell.co.kr/sitemap.xml

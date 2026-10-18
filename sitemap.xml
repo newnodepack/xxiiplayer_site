@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://baseonsell.co.kr/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://baseonsell.co.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://baseonsell.co.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://baseonsell.co.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://baseonsell.co.kr/es/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://baseonsell.co.kr/ar/"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://baseonsell.co.kr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://baseonsell.co.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://baseonsell.co.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://baseonsell.co.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://baseonsell.co.kr/es/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://baseonsell.co.kr/ar/"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://baseonsell.co.kr/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://baseonsell.co.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://baseonsell.co.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://baseonsell.co.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://baseonsell.co.kr/es/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://baseonsell.co.kr/ar/"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://baseonsell.co.kr/es/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://baseonsell.co.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://baseonsell.co.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://baseonsell.co.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://baseonsell.co.kr/es/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://baseonsell.co.kr/ar/"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://baseonsell.co.kr/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://baseonsell.co.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://baseonsell.co.kr/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://baseonsell.co.kr/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://baseonsell.co.kr/es/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://baseonsell.co.kr/ar/"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://baseonsell.co.kr/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://baseonsell.co.kr/account-deletion.html</loc>
+    <changefreq>yearly</changefreq>
+  </url>
+</urlset>

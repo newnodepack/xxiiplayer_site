@@ -1,0 +1,16 @@
+{
+  "name": "XXII player",
+  "short_name": "XXII player",
+  "description": "A player for the music and videos already on your phone.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#161826",
+  "theme_color": "#161826",
+  "icons": [
+    { "src": "/images/Frame16.png",  "sizes": "16x16",   "type": "image/png" },
+    { "src": "/images/Frame32.png",  "sizes": "32x32",   "type": "image/png" },
+    { "src": "/images/Frame180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/images/Frame512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

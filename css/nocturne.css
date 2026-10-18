@@ -41,8 +41,8 @@
   --color-section-ghost:#9c3a33;
 
   /* — 타이포 — */
-  --font-heading:"Inter","Noto Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
-  --font-body:"Inter","Noto Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --font-heading:"Inter","Noto Sans KR","Noto Sans Arabic",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --font-body:"Inter","Noto Sans KR","Noto Sans Arabic",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
 
   /* — 간격 (밀도 0.7×) — */
   --space-1:3px;
@@ -98,6 +98,25 @@ a:hover{color:var(--accent-200)}
 ::selection{background:color-mix(in srgb,var(--color-accent) 30%,transparent)}
 
 .text-muted{color:color-mix(in srgb,var(--color-text) 55%,transparent)}
+
+/* ── 접근성 유틸 ──────────────────────────────────────────────────── */
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+.skip-link{
+  position:absolute;inset-inline-start:var(--space-4);top:-100px;z-index:2000;
+  display:inline-flex;align-items:center;min-height:40px;padding:var(--space-2) var(--space-6);
+  background:var(--color-surface);box-shadow:var(--shadow-sm);
+  border-radius:var(--radius-md);color:var(--color-text);
+  font-family:var(--font-heading);font-weight:500;font-size:14px;
+  transition:top .12s linear;
+}
+.skip-link:focus-visible{top:var(--space-4);color:var(--color-text)}
+
+/* RTL — 액센트 마크와 규칙선은 좌우 대칭이라 그대로 두고, 방향 있는 것만 뒤집습니다 */
+[dir="rtl"] .faq summary::after{transform:rotate(135deg)}
+[dir="rtl"] .faq details[open] summary::after{transform:rotate(-45deg)}
 .tnum{font-variant-numeric:tabular-nums}
 
 /* ── 규칙선 — 양끝 40px에서 투명으로 사라집니다 ────────────────────── */
@@ -109,7 +128,7 @@ a:hover{color:var(--accent-200)}
 }
 
 /* ── 액센트 마크 — 실선으로 남는 유일한 선 ────────────────────────── */
-.mark{width:26px;height:2px;background:var(--color-accent);border:0;margin:var(--space-4) 0 0}
+.mark{width:26px;height:2px;background:var(--color-accent);border:0;margin:var(--space-4) 0 0;margin-inline-end:auto}
 .mark-lg{width:40px}
 
 /* ── 키커 ─────────────────────────────────────────────────────────── */
@@ -226,7 +245,7 @@ section.doc h3{
   font-variant-numeric:tabular-nums;
 }
 .wrap p,.wrap li{color:color-mix(in srgb,var(--color-text) 82%,transparent)}
-ul{margin:var(--space-3) 0;padding-left:18px}
+ul{margin:var(--space-3) 0;padding-inline-start:18px}
 li{margin:var(--space-1) 0}
 li::marker{color:var(--neutral-600)}
 strong{font-weight:500;color:var(--color-text)}
@@ -243,22 +262,22 @@ em{color:var(--accent-300);font-style:normal}
 .cta:hover{background:color-mix(in srgb,var(--color-accent) 8%,transparent);color:var(--color-accent)}
 .cta:active{border-color:var(--accent-400);color:var(--accent-400)}
 
-table{border-collapse:collapse;width:100%;margin:var(--space-4) 0;font-size:14px}
-th,td{
+.wrap table{border-collapse:collapse;width:100%;margin:var(--space-4) 0;font-size:14px}
+.wrap th,.wrap td{
   border:0;border-top:1px solid var(--color-divider);
-  padding:var(--space-3) var(--space-4);text-align:left;vertical-align:top;
+  padding:var(--space-3) var(--space-4);text-align:start;vertical-align:top;
 }
-th{
+.wrap th{
   background:transparent;color:var(--neutral-400);font-weight:500;
   font-size:11px;letter-spacing:.09em;text-transform:uppercase;
 }
-tbody tr:last-child td{border-bottom:1px solid var(--color-divider)}
+.wrap tbody tr:last-child td{border-bottom:1px solid var(--color-divider)}
 
 .tag.cloud{background:var(--neutral-800);color:var(--neutral-100)}
-li > .tag,p > .tag{margin-right:var(--space-2);vertical-align:baseline}
+li > .tag,p > .tag{margin-inline-end:var(--space-2);vertical-align:baseline}
 
 .note{
-  background:var(--color-surface);border:0;border-left:2px solid var(--color-accent);
+  background:var(--color-surface);border:0;border-inline-start:2px solid var(--color-accent);
   box-shadow:var(--shadow-sm);
   padding:var(--space-4) var(--space-6);border-radius:var(--radius-md);
   margin:var(--space-6) 0;font-size:14px;
