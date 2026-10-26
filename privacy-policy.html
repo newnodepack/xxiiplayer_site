@@ -4,18 +4,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XXII player · 개인정보 처리방침 / Privacy Policy</title>
-<meta name="theme-color" content="#161826" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+KR:wght@400;500&display=swap"
-/>
-<link rel="stylesheet" href="css/nocturne.css" />
+<style>
+  :root{
+    --brand:#E30707; --ink:#1c1414; --muted:#6b5e5e; --line:#eadfdf;
+    --bg:#fffdfc; --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    line-height:1.7; font-size:16px;
+  }
+  header{
+    background:var(--brand); color:#fff; padding:40px 20px 34px;
+    text-align:center;
+  }
+  .logo{
+    width:64px;height:64px;border-radius:16px;background:rgba(0,0,0,.18);
+    display:inline-flex;align-items:center;justify-content:center;font-weight:800;
+    font-size:24px;letter-spacing:1px;margin-bottom:14px;
+  }
+  header h1{margin:0;font-size:26px;font-weight:800}
+  header p{margin:6px 0 0;opacity:.9;font-size:15px}
+  .wrap{max-width:820px;margin:0 auto;padding:28px 20px 60px}
+  nav.lang{
+    display:flex;gap:8px;justify-content:center;margin:22px 0 6px;flex-wrap:wrap;
+  }
+  nav.lang a{
+    text-decoration:none;color:var(--brand);border:1px solid var(--line);
+    padding:6px 14px;border-radius:999px;font-size:14px;font-weight:600;background:var(--card);
+  }
+  section.doc{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:26px 24px;margin-top:22px;
+  }
+  h2{font-size:22px;margin:0 0 4px;border-bottom:2px solid var(--brand);padding-bottom:10px}
+  h3{font-size:17px;margin:26px 0 6px;color:var(--brand)}
+  .updated{color:var(--muted);font-size:14px;margin:6px 0 0}
+  p,li{color:#2b2222}
+  ul{margin:8px 0 8px;padding-left:20px}
+  li{margin:4px 0}
+  a{color:var(--brand)}
+  .tag{
+    display:inline-block;background:#fdecec;color:var(--brand);border-radius:6px;
+    padding:1px 8px;font-size:13px;font-weight:700;margin-right:6px;
+  }
+  .tag.cloud{background:#eef2fd;color:#2b57d6}
+  .note{background:#f7f2f2;border-left:4px solid var(--brand);padding:12px 14px;border-radius:8px;margin:14px 0}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 20px 40px}
+  hr.sep{border:none;border-top:1px dashed var(--line);margin:40px 0}
+  code{background:#f3ecec;padding:1px 6px;border-radius:5px;font-size:14px}
+</style>
 </head>
 <body>
 <header>
-  <div class="logo" aria-hidden="true"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216Zm112-114.75L136,82.05V50.75l64,19.2Z"/></svg></div>
+  <div class="logo">XːX</div>
   <h1>XXII player</h1>
   <p>개인정보 처리방침 · Privacy Policy</p>
 </header>
@@ -29,14 +73,16 @@
   <!-- ============================ 한국어 ============================ -->
   <section class="doc" id="ko">
     <h2>개인정보 처리방침</h2>
-    <p class="updated">앱 이름: <strong>XXII player</strong> · 시행일: 2026년 7월 4일 · 최종 개정: 2026년 7월 11일</p>
+    <p class="updated">앱 이름: <strong>XXII player</strong> · 시행일: 2026년 7월 4일 · 최종 개정: 2026년 10월 26일</p>
 
     <p>본 방침은 음악·동영상 재생 애플리케이션 <strong>XXII player</strong>(이하 “앱”)가 이용자의 정보를 어떻게 처리하는지를 설명합니다. 앱을 설치·사용함으로써 본 방침에 동의하는 것으로 간주됩니다.</p>
 
     <h3>1. 핵심 요약</h3>
     <ul>
-      <li>앱의 대부분 기능은 <strong>계정 없이</strong> 사용할 수 있습니다. 다만 <strong>선택적으로 이메일·비밀번호 계정</strong>을 만들어 재생목록을 클라우드에 백업/복원할 수 있습니다.</li>
-      <li>기기에 저장된 <strong>음악·동영상 파일, 편집한 커버 이미지</strong>는 <strong>이용자의 기기에만 저장</strong>되며 외부로 전송·업로드되지 않습니다.</li>
+      <li>앱의 대부분 기능은 <strong>계정 없이</strong> 사용할 수 있습니다. 다만 <strong>선택적으로 이메일·비밀번호 계정</strong>을 만들어 재생목록 클라우드 백업/복원, 커뮤니티 글쓰기, 녹음 스튜디오를 이용할 수 있습니다.</li>
+      <li>기기에 저장된 <strong>음악·동영상 파일, 편집한 커버 이미지, 스튜디오 녹음, AI 음원 분리 결과</strong>는 <strong>이용자의 기기에만 저장</strong>되며 외부로 전송·업로드되지 않습니다. 유일한 예외는 이용자가 <strong>커뮤니티 게시글에 직접 첨부한 사진</strong>입니다(4-1항).</li>
+      <li><strong>커뮤니티</strong>에 쓴 글·사진·댓글과 공개 이름은 <strong>모든 이용자에게 공개</strong>됩니다.</li>
+      <li>광고 성과 측정을 위해 <strong>Meta(Facebook) SDK</strong>로 일부 앱 이벤트와 광고 ID를 Meta에 전송합니다. 계정 화면의 <strong>“광고 성과 측정”</strong>에서 언제든 끌 수 있으며, 유럽경제지역·영국·스위스에서는 동의한 경우에만 전송합니다(6-1항).</li>
       <li>계정에 로그인하고 <strong>백업을 실행한 경우에 한해</strong>, 재생목록 정보(재생목록 이름, 각 곡의 제목·아티스트·앨범·재생시간 등 <strong>메타데이터</strong>)가 이용자 <strong>본인 계정</strong>으로 클라우드(Google Firebase)에 저장됩니다. <strong>음악·동영상 파일 자체는 업로드되지 않습니다.</strong></li>
       <li>앱 개선을 위해 <strong>익명화된 사용 통계</strong>를 Google 애널리틱스(Firebase)를 통해 수집합니다.</li>
       <li>유료 기능(<strong>XXII Pro</strong>)은 Google Play 인앱 결제로 제공됩니다.</li>
@@ -50,6 +96,7 @@
       <li><span class="tag">로컬</span>이용자가 편집한 곡 제목·아티스트명·앨범 커버 이미지(직접 선택한 이미지는 앱 내부 저장소에 복사되어 보관).</li>
       <li><span class="tag">로컬</span>이퀄라이저·오디오 효과 설정, 재생목록 무작위 재생 설정 등 앱 환경설정.</li>
       <li><span class="tag">로컬</span>이용자가 만든 재생목록 — <em>백업을 실행하지 않는 한</em> 기기에만 저장됩니다.</li>
+      <li><span class="tag">로컬</span>녹음 스튜디오의 녹음 트랙·프로젝트와 완성한 음악 파일(4-2항), AI 음원 분리로 만든 보컬·반주 파일(4-3항).</li>
     </ul>
 
     <h3>3. 계정 및 인증 (선택 사항)</h3>
@@ -57,6 +104,7 @@
     <ul>
       <li><span class="tag cloud">클라우드</span>계정 생성·로그인 시 <strong>이메일 주소</strong>가 Firebase에 저장됩니다. 비밀번호는 Firebase가 안전하게 관리하며 개발자는 접근할 수 없습니다.</li>
       <li>비밀번호 재설정 시 입력한 이메일로 재설정 메일이 발송됩니다.</li>
+      <li><span class="tag cloud">클라우드</span>커뮤니티나 녹음 스튜디오를 처음 쓸 때 정하는 <strong>공개 이름(닉네임)</strong>이 계정 정보에 저장됩니다. 이메일 주소는 다른 이용자에게 공개되지 않습니다.</li>
       <li>계정은 전적으로 선택 사항이며, 계정 없이도 재생·재생목록·이퀄라이저 등 로컬 기능을 모두 사용할 수 있습니다.</li>
     </ul>
 
@@ -70,8 +118,30 @@
       🔒 <strong>업로드되지 않는 것</strong>: 실제 음악·동영상 <strong>파일</strong>과 <strong>커버 이미지</strong>는 클라우드로 전송되지 않습니다. 백업 데이터는 <strong>본인 계정으로만</strong> 접근할 수 있으며, 백업·복원은 이용자가 직접 실행할 때만 이루어집니다.
     </div>
 
+    <h3>4-1. 커뮤니티 게시판 (로그인 필요)</h3>
+    <p>로그인한 이용자는 커뮤니티에 글과 댓글을 쓸 수 있습니다. 글 읽기는 로그인 없이도 가능합니다. 처음 글을 쓸 때 커뮤니티 규칙에 동의해야 합니다.</p>
+    <ul>
+      <li><span class="tag cloud">클라우드</span>게시글(제목·본문·첨부 사진)과 댓글, 작성자의 공개 이름·계정 ID, 작성 시각, 조회수·댓글 수가 <strong>Cloud Firestore</strong>에 저장되고 <strong>모든 이용자에게 공개</strong>됩니다.</li>
+      <li><span class="tag cloud">클라우드</span>첨부한 사진은 <strong>Firebase Storage</strong>에 저장됩니다. 업로드 전에 기기에서 크기를 줄이고 다시 인코딩하므로 <strong>촬영 위치 등 사진의 EXIF 정보는 업로드되지 않습니다.</strong></li>
+      <li><span class="tag cloud">클라우드</span>이용자가 다른 이용자를 <strong>차단</strong>하면 차단 목록이 본인 계정 영역에 저장됩니다. 게시글·댓글을 <strong>신고</strong>하면 신고 사유, 대상 글의 일부(최대 200자), 신고한 계정 ID가 운영자 검토를 위해 저장됩니다.</li>
+      <li>운영자는 신고된 내용과 커뮤니티 규칙을 위반한 게시글·댓글을 삭제할 수 있습니다.</li>
+      <li>이용자는 자신이 쓴 글과 댓글을 언제든 수정·삭제할 수 있으며, 글을 삭제하면 첨부 사진도 함께 삭제됩니다.</li>
+    </ul>
+
+    <h3>4-2. 녹음 스튜디오 (Pro · 로그인 필요)</h3>
+    <ul>
+      <li><span class="tag">로컬</span>마이크로 녹음한 트랙과 프로젝트는 <strong>기기 내부에만</strong> 저장되며 서버로 전송되지 않습니다. 녹음은 이용자가 녹음 버튼을 눌러 시작하고 멈출 때까지만 이루어집니다.</li>
+      <li><span class="tag">로컬</span>완성한 음악 파일은 기기의 <code>Music/XXII Studio</code> 폴더에 저장되며, 파일 안에 이용자가 입력한 제목·아티스트·커버와 함께 <strong>제작자 표시(공개 이름과 계정 ID)</strong>가 기록됩니다. 이메일 주소는 기록되지 않습니다. 이용자가 이 파일을 다른 사람에게 공유하면 받은 사람도 제작자 표시를 볼 수 있습니다.</li>
+    </ul>
+
+    <h3>4-3. AI 음원 분리 (Pro)</h3>
+    <ul>
+      <li><span class="tag">로컬</span>곡을 보컬과 반주로 나누는 처리는 <strong>기기 안에서만</strong> 이루어지며, 곡이나 분리 결과는 외부로 전송되지 않습니다. 결과는 <code>Music/XXII Separated</code> 폴더에 저장됩니다.</li>
+      <li>처음 사용할 때 분리용 AI 모델(약 20MB)을 <strong>Google Play</strong>에서 내려받습니다. 이 과정에서 앱이 추가로 수집하는 개인정보는 없습니다.</li>
+    </ul>
+
     <h3>5. 인앱 결제 (XXII Pro)</h3>
-    <p>이퀄라이저·오디오 효과, 동영상 화면 속 화면(PIP) 및 백그라운드 재생 등 일부 기능은 유료(<strong>XXII Pro</strong>)로 제공되며 <strong>Google Play 인앱 결제</strong>를 통해 판매됩니다.</p>
+    <p>이퀄라이저·오디오 효과, 동영상 화면 속 화면(PIP) 및 백그라운드 재생, 녹음 스튜디오, AI 음원 분리 등 일부 기능은 유료(<strong>XXII Pro</strong>)로 제공되며 <strong>Google Play 인앱 결제</strong>를 통해 판매됩니다.</p>
     <ul>
       <li>결제 처리와 결제 수단(카드 등) 정보는 <strong>Google Play가 처리</strong>합니다. 앱은 카드번호 등 결제 정보를 수집·저장하지 않습니다.</li>
       <li>앱은 구매 완료 여부(이용 권한)만 확인하며, 구매 관련 이벤트(구매 시작·완료, 결제 금액·통화·상품 ID)는 아래 6항의 익명 통계로 기록될 수 있습니다.</li>
@@ -87,15 +157,32 @@
       🔒 <strong>통계로 수집하지 않는 것</strong>: 검색어의 실제 <strong>내용</strong>이나 이용자의 <strong>음악·동영상 파일명·곡 정보</strong>는 통계로 전송되지 않습니다. “검색을 했다”는 사실만 기록되며 입력한 검색어 텍스트는 전송되지 않습니다. (곡 메타데이터가 저장되는 유일한 경우는 이용자가 직접 실행하는 4항의 재생목록 백업이며, 이는 통계와 별개로 본인 계정에만 저장됩니다.)
     </div>
 
+    <h3>6-1. 광고 성과 측정 (Meta)</h3>
+    <p>앱은 Meta 광고(Facebook·Instagram)가 새 이용자를 얼마나 데려오는지 측정하기 위해 <strong>Meta(Facebook) SDK</strong>를 사용합니다. 측정이 허용된 경우 다음 정보가 <strong>Meta Platforms, Inc.와 공유</strong>됩니다.</p>
+    <ul>
+      <li><strong>앱 이벤트</strong>: 앱 설치·실행, Pro 안내 화면 조회, 결제 시작, Pro 구매(금액·통화·상품 ID), 회원가입, 스튜디오 저장·음원 분리 완료·커뮤니티 글 작성이 있었다는 사실.</li>
+      <li><strong>기기 정보</strong>: 광고 ID, 기기 모델, 운영체제·앱 버전, 언어 등 SDK가 이벤트와 함께 보내는 정보.</li>
+    </ul>
+    <div class="note">
+      🔒 <strong>Meta에 보내지 않는 것</strong>: 이메일 주소, 공개 이름, 음악·동영상 파일이나 곡 정보, 녹음, 게시글 내용은 Meta로 전송되지 않습니다. 앱은 광고를 표시하지 않으며 개인정보를 판매하지 않습니다.
+    </div>
+    <ul>
+      <li>계정 화면(로그인하지 않았다면 로그인 화면)의 <strong>“광고 성과 측정”</strong> 스위치로 언제든 끄고 켤 수 있습니다. 끄면 이후로는 Meta로 아무것도 전송되지 않습니다.</li>
+      <li><strong>유럽경제지역(EEA)·영국·스위스</strong>의 이용자에게는 처음에 동의 여부를 묻고, 동의한 경우에만 측정합니다. 그 밖의 지역에서는 기본으로 켜져 있습니다.</li>
+    </ul>
+
     <h3>7. 권한 사용</h3>
     <ul>
       <li><strong>오디오/미디어 접근</strong>(READ_MEDIA_AUDIO / 저장소): 기기의 음악 파일을 찾아 재생하기 위해 사용합니다.</li>
       <li><strong>동영상 접근</strong>(READ_MEDIA_VIDEO): 기기의 동영상 파일을 찾아 재생하기 위해 사용합니다.</li>
+      <li><strong>마이크</strong>(RECORD_AUDIO): 녹음 스튜디오에서 이용자가 녹음 버튼을 누른 동안에만 녹음하기 위해 사용합니다. 녹음은 기기에만 저장됩니다.</li>
+      <li><strong>파일 수정·삭제</strong>: 이용자가 곡 정보를 고치거나 곡·동영상을 삭제할 때, Android의 확인 창에서 허용한 파일에 한해 수정·삭제합니다.</li>
       <li><strong>알림</strong>(POST_NOTIFICATIONS): 재생 컨트롤 알림을 표시하기 위해 사용합니다.</li>
-      <li><strong>포그라운드 서비스</strong>: 화면을 꺼도 음악 또는 (Pro) 동영상을 계속 재생하기 위해 사용합니다.</li>
+      <li><strong>포그라운드 서비스</strong>: 화면을 꺼도 음악 또는 (Pro) 동영상을 계속 재생하기 위해, 그리고 AI 음원 분리 모델을 내려받는 동안(Google Play 에셋 전송) 사용합니다.</li>
+      <li><strong>광고 ID</strong>(AD_ID): 6-1항의 광고 성과 측정이 허용된 경우에만 사용합니다.</li>
       <li><strong>오디오 설정</strong>(MODIFY_AUDIO_SETTINGS): 이퀄라이저·베이스 부스트·볼륨 부스트 등 오디오 효과를 적용하기 위해 사용합니다.</li>
-      <li><strong>사진 선택</strong>: 앨범 커버로 사용할 이미지를 이용자가 직접 선택할 때만 접근하며, 선택한 이미지는 기기 내부에만 저장됩니다.</li>
-      <li><strong>인터넷</strong>: 계정 인증, 재생목록 클라우드 백업/복원, 사용 통계 및 인앱 결제 처리를 위해 사용합니다.</li>
+      <li><strong>사진 선택</strong>(Android 사진 선택 도구): 이용자가 직접 고른 이미지에만 접근합니다. 앨범 커버·스튜디오 커버로 고른 이미지는 기기에만 저장되고, 커뮤니티 게시글에 첨부한 사진만 업로드됩니다(4-1항). 앱은 사진 보관함 전체 접근 권한을 요청하지 않습니다.</li>
+      <li><strong>인터넷</strong>: 계정 인증, 재생목록 클라우드 백업/복원, 커뮤니티, AI 모델 다운로드, 사용 통계·광고 성과 측정 및 인앱 결제 처리를 위해 사용합니다.</li>
     </ul>
 
     <h3>8. 동영상 재생</h3>
@@ -105,9 +192,10 @@
     <p>앱은 Android Auto를 지원합니다. 차량 화면에서의 재생·탐색은 위와 동일한 방식으로 처리되며, 추가로 수집하는 개인정보는 없습니다.</p>
 
     <h3>10. 제3자 서비스</h3>
-    <p>앱은 Google LLC가 제공하는 다음 서비스를 사용합니다. 각 서비스의 데이터 처리에 관한 사항은 아래 정책을 참고하세요.</p>
+    <p>앱은 다음 제3자 서비스를 사용합니다. 각 서비스의 데이터 처리에 관한 사항은 아래 정책을 참고하세요.</p>
     <ul>
-      <li>Google 애널리틱스(Firebase Analytics) · Firebase Authentication · Cloud Firestore · Google Play 결제(Google Play Billing).</li>
+      <li><strong>Google LLC</strong>: Google 애널리틱스(Firebase Analytics) · Firebase Authentication · Cloud Firestore · Firebase Storage · Google Play 결제(Google Play Billing) · Google Play 에셋 전송(Play Asset Delivery).</li>
+      <li><strong>Meta Platforms, Inc.</strong>: Meta(Facebook) SDK 앱 이벤트(6-1항). Meta 개인정보처리방침: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">https://www.facebook.com/privacy/policy/</a></li>
       <li>Google 개인정보처리방침: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
       <li>Firebase 데이터 처리: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></li>
     </ul>
@@ -115,24 +203,28 @@
     <h3>11. 데이터 보관 및 삭제</h3>
     <ul>
       <li>기기 내 데이터(음악·동영상 접근, 재생목록·설정 등)는 이용자가 앱을 삭제하면 함께 삭제됩니다.</li>
-      <li>계정 및 클라우드 백업 데이터(이메일, 백업된 재생목록 메타데이터)는 계정이 유지되는 동안 보관됩니다.</li>
-      <li><strong>계정·백업 데이터 삭제 요청</strong>: 아래 문의 이메일로 요청하시면 계정과 클라우드에 저장된 백업 데이터를 삭제해 드립니다.</li>
-      <li>애널리틱스 데이터는 Google의 보관 정책에 따라 일정 기간 후 자동 삭제됩니다.</li>
+      <li>계정·클라우드 데이터(이메일, 공개 이름, 백업된 재생목록, 커뮤니티 글·사진·댓글, 차단 목록)는 계정이 유지되는 동안 보관됩니다.</li>
+      <li><strong>앱에서 바로 계정 삭제</strong>: 계정 화면 → <strong>계정 삭제</strong> → 비밀번호 확인. 계정, 공개 이름, 클라우드 백업, 이용자가 쓴 커뮤니티 글·첨부 사진·댓글, 차단 목록이 <strong>즉시 영구 삭제</strong>됩니다.</li>
+      <li><strong>이메일로 삭제 요청</strong>: 앱을 쓸 수 없는 경우 아래 문의 이메일로 요청하시면 30일 이내에 같은 범위로 삭제해 드립니다. 자세한 방법은 <a href="account-deletion.html">계정 및 데이터 삭제 안내</a>를 참고하세요.</li>
+      <li>이용자가 접수한 신고 기록(사유, 대상 글 일부, 신고한 계정 ID)은 운영자가 처리할 때까지 보관된 뒤 삭제됩니다.</li>
+      <li>기기에 저장된 스튜디오 녹음·음원 분리 결과 파일은 이용자가 직접 지우기 전까지 기기에 남습니다.</li>
+      <li>애널리틱스 데이터는 Google의 보관 정책에 따라, Meta로 전송된 앱 이벤트는 Meta의 보관 정책에 따라 처리됩니다.</li>
     </ul>
 
     <h3>12. 이용자의 선택</h3>
     <ul>
       <li>재생목록 백업을 실행하지 않으면 클라우드에는 아무 데이터도 저장되지 않습니다.</li>
-      <li>앱에서 <strong>로그아웃</strong>하면 기기에서 계정 연결이 해제됩니다. 계정 자체의 삭제는 11항의 방법으로 요청할 수 있습니다.</li>
+      <li>앱에서 <strong>로그아웃</strong>하면 기기에서 계정 연결이 해제됩니다. 계정 자체는 11항의 방법으로 앱에서 바로 삭제할 수 있습니다.</li>
+      <li>계정 화면의 <strong>“광고 성과 측정”</strong> 스위치를 끄면 Meta로 앱 이벤트와 광고 ID를 보내지 않습니다.</li>
       <li>앱을 삭제하면 기기 내 모든 앱 데이터가 제거되고 이후 통계 수집이 중단됩니다.</li>
       <li>Android 기기 설정 → 개인정보/광고에서 <strong>광고 ID 재설정 또는 삭제</strong>를 통해 맞춤형 통계를 제한할 수 있습니다.</li>
     </ul>
 
     <h3>13. 아동의 개인정보</h3>
-    <p>앱은 만 13세 미만 아동을 주 대상으로 하지 않으며, 아동으로부터 고의로 개인정보를 수집하지 않습니다.</p>
+    <p>앱은 만 13세 미만 아동을 대상으로 하지 않으며, 아동으로부터 고의로 개인정보를 수집하지 않습니다. 커뮤니티는 다른 이용자에게 공개되는 공간이므로 만 13세 미만 아동은 이용할 수 없습니다.</p>
 
     <h3>14. 보안</h3>
-    <p>수집·저장되는 정보(계정·백업·통계)는 Google의 보안 인프라를 통해 전송·보관됩니다. 다만 인터넷을 통한 어떠한 전송도 100% 안전을 보장하지는 못합니다.</p>
+    <p>수집·저장되는 정보(계정·백업·커뮤니티·통계)는 암호화된 연결로 전송되어 Google의 보안 인프라에 보관됩니다. 다만 인터넷을 통한 어떠한 전송도 100% 안전을 보장하지는 못합니다.</p>
 
     <h3>15. 방침의 변경</h3>
     <p>본 방침은 필요에 따라 변경될 수 있으며, 변경 시 본 페이지에 게시하고 시행일·개정일을 갱신합니다.</p>
@@ -147,14 +239,16 @@
   <!-- ============================ English ============================ -->
   <section class="doc" id="en">
     <h2>Privacy Policy</h2>
-    <p class="updated">App: <strong>XXII player</strong> · Effective date: July 4, 2026 · Last updated: July 11, 2026</p>
+    <p class="updated">App: <strong>XXII player</strong> · Effective date: July 4, 2026 · Last updated: October 26, 2026</p>
 
     <p>This Privacy Policy explains how the music &amp; video player application <strong>XXII player</strong> (the “App”) handles your information. By installing and using the App, you agree to this Policy.</p>
 
     <h3>1. Summary</h3>
     <ul>
-      <li>Most features work <strong>without an account</strong>. Optionally, you can create an <strong>email &amp; password account</strong> to back up and restore your playlists in the cloud.</li>
-      <li>Your <strong>music &amp; video files and edited cover images</strong> are stored <strong>only on your device</strong> and are never uploaded or transmitted.</li>
+      <li>Most features work <strong>without an account</strong>. Optionally, you can create an <strong>email &amp; password account</strong> to back up and restore your playlists in the cloud, write in the Community and use the Recording studio.</li>
+      <li>Your <strong>music &amp; video files, edited cover images, studio recordings and AI separation results</strong> are stored <strong>only on your device</strong> and are never uploaded or transmitted. The only exception is a <strong>photo you attach to a Community post yourself</strong> (Section 4-1).</li>
+      <li>What you write in the <strong>Community</strong> — posts, photos, comments — and your public name are <strong>visible to every user</strong>.</li>
+      <li>To measure our ads, the <strong>Meta (Facebook) SDK</strong> sends some app events and your advertising ID to Meta. You can turn this off at any time with <strong>“Ad measurement”</strong> on the Account screen; in the EEA, the UK and Switzerland it runs only if you agree (Section 6-1).</li>
       <li><strong>Only if you sign in and run a backup</strong>, your playlist information (playlist names and each track’s <strong>metadata</strong> — title, artist, album, duration) is stored in the cloud (Google Firebase) under <strong>your own account</strong>. <strong>The music/video files themselves are never uploaded.</strong></li>
       <li>We collect <strong>anonymous, aggregated usage statistics</strong> through Google Analytics for Firebase to improve the App.</li>
       <li>Paid features (<strong>XXII Pro</strong>) are offered through Google Play in-app purchases.</li>
@@ -168,6 +262,7 @@
       <li><span class="tag">LOCAL</span>Custom song titles, artist names, and cover images (images you pick are copied into the App’s private storage).</li>
       <li><span class="tag">LOCAL</span>Equalizer / audio-effect settings and other app preferences.</li>
       <li><span class="tag">LOCAL</span>Playlists you create — kept on your device <em>unless you run a backup</em>.</li>
+      <li><span class="tag">LOCAL</span>Recording studio tracks, projects and the songs you make (Section 4-2), and the vocal / instrumental files made by AI separation (Section 4-3).</li>
     </ul>
 
     <h3>3. Account &amp; authentication (optional)</h3>
@@ -175,6 +270,7 @@
     <ul>
       <li><span class="tag cloud">CLOUD</span>When you create an account or sign in, your <strong>email address</strong> is stored in Firebase. Passwords are securely managed by Firebase and are not accessible to the developer.</li>
       <li>If you reset your password, a reset email is sent to the address you provide.</li>
+      <li><span class="tag cloud">CLOUD</span>The <strong>public name (nickname)</strong> you choose the first time you use the Community or the Recording studio is stored with your account. Your email address is never shown to other users.</li>
       <li>An account is entirely optional; you can use all local features (playback, playlists, equalizer) without one.</li>
     </ul>
 
@@ -188,8 +284,30 @@
       🔒 <strong>What is NOT uploaded</strong>: your actual music/video <strong>files</strong> and <strong>cover images</strong> are never sent to the cloud. Backup data is accessible <strong>only from your own account</strong>, and backup/restore happen only when you trigger them.
     </div>
 
+    <h3>4-1. Community board (sign-in required)</h3>
+    <p>Signed-in users can write posts and comments in the Community; anyone can read them without signing in. You agree to the Community rules before your first post.</p>
+    <ul>
+      <li><span class="tag cloud">CLOUD</span>Posts (title, text, attached photos) and comments, with the author’s public name and account ID, the time, and view and comment counts, are stored in <strong>Cloud Firestore</strong> and are <strong>visible to every user</strong>.</li>
+      <li><span class="tag cloud">CLOUD</span>Attached photos are stored in <strong>Firebase Storage</strong>. They are resized and re-encoded on your device first, so <strong>EXIF data such as the shooting location is not uploaded</strong>.</li>
+      <li><span class="tag cloud">CLOUD</span>If you <strong>block</strong> another user, the block list is stored in your own account area. If you <strong>report</strong> a post or comment, the reason, part of the reported text (up to 200 characters) and your account ID are stored for the operator to review.</li>
+      <li>The operator may delete reported content and posts or comments that break the Community rules.</li>
+      <li>You can edit or delete your own posts and comments at any time; deleting a post also deletes its photos.</li>
+    </ul>
+
+    <h3>4-2. Recording studio (Pro · sign-in required)</h3>
+    <ul>
+      <li><span class="tag">LOCAL</span>Tracks you record with the microphone and your projects are stored <strong>only on your device</strong> and never sent to a server. The App records only after you tap the record button, until you stop it.</li>
+      <li><span class="tag">LOCAL</span>Finished songs are saved to the <code>Music/XXII Studio</code> folder. Each file carries the title, artist and cover you entered and a <strong>creator credit (your public name and account ID)</strong>; your email address is never written. If you share the file, whoever receives it can see the credit.</li>
+    </ul>
+
+    <h3>4-3. AI vocal separation (Pro)</h3>
+    <ul>
+      <li><span class="tag">LOCAL</span>Splitting a song into vocals and instrumental happens <strong>entirely on your device</strong>; neither the song nor the results are transmitted. Results are saved to the <code>Music/XXII Separated</code> folder.</li>
+      <li>The first time, the AI model (about 20 MB) is downloaded from <strong>Google Play</strong>. The App collects no additional personal data for this.</li>
+    </ul>
+
     <h3>5. In-app purchases (XXII Pro)</h3>
-    <p>Some features — the equalizer &amp; audio effects, and video picture-in-picture and background playback — are paid (<strong>XXII Pro</strong>) and sold through <strong>Google Play in-app purchases</strong>.</p>
+    <p>Some features — the equalizer &amp; audio effects, video picture-in-picture and background playback, the Recording studio and AI vocal separation — are paid (<strong>XXII Pro</strong>) and sold through <strong>Google Play in-app purchases</strong>.</p>
     <ul>
       <li>Payment and payment-method (card, etc.) information is <strong>handled by Google Play</strong>. The App does not collect or store payment details.</li>
       <li>The App only checks your purchase/entitlement status. Purchase-related events (purchase start/complete, price, currency, product ID) may be recorded as anonymous statistics per Section 6.</li>
@@ -205,15 +323,32 @@
       🔒 <strong>What we do NOT send to analytics</strong>: the actual <strong>text of your searches</strong> and the <strong>names or metadata of your music/video</strong> are not transmitted. We record only that “a search happened,” not the query you typed. (The only case where track metadata is stored is the playlist backup in Section 4, which you trigger yourself and which stays in your own account, separate from analytics.)
     </div>
 
+    <h3>6-1. Ad measurement (Meta)</h3>
+    <p>To measure how many new users our Meta ads (Facebook, Instagram) bring, the App uses the <strong>Meta (Facebook) SDK</strong>. While ad measurement is allowed, the following is <strong>shared with Meta Platforms, Inc.</strong>:</p>
+    <ul>
+      <li><strong>App events</strong>: that the App was installed or opened, the Pro screen was viewed, a checkout was started, Pro was bought (price, currency, product ID), an account was created, and that a studio song was saved, a separation finished or a Community post was written.</li>
+      <li><strong>Device information</strong>: the advertising ID, device model, OS and app version, language and similar data the SDK sends with each event.</li>
+    </ul>
+    <div class="note">
+      🔒 <strong>What is NOT sent to Meta</strong>: your email address, public name, music/video files or track information, recordings and post contents. The App shows no ads and does not sell your personal information.
+    </div>
+    <ul>
+      <li>Turn it off or on at any time with the <strong>“Ad measurement”</strong> switch on the Account screen (or on the sign-in screen if you are signed out). Once it is off, nothing more is sent to Meta.</li>
+      <li>Users in the <strong>EEA, the UK and Switzerland</strong> are asked first, and measurement runs only if they agree. Elsewhere it is on by default.</li>
+    </ul>
+
     <h3>7. Permissions</h3>
     <ul>
       <li><strong>Audio/media access</strong> (READ_MEDIA_AUDIO / storage): to find and play the audio files on your device.</li>
       <li><strong>Video access</strong> (READ_MEDIA_VIDEO): to find and play the video files on your device.</li>
+      <li><strong>Microphone</strong> (RECORD_AUDIO): used by the Recording studio only while you are recording. Recordings stay on your device.</li>
+      <li><strong>Editing and deleting files</strong>: when you edit a song’s details or delete songs or videos, only the files you approve in Android’s confirmation dialog are changed or deleted.</li>
       <li><strong>Notifications</strong> (POST_NOTIFICATIONS): to show playback controls.</li>
-      <li><strong>Foreground service</strong>: to keep music — or (Pro) video — playing when the screen is off.</li>
+      <li><strong>Foreground service</strong>: to keep music — or (Pro) video — playing when the screen is off, and while the AI separation model is being downloaded (Google Play Asset Delivery).</li>
+      <li><strong>Advertising ID</strong> (AD_ID): used only while ad measurement (Section 6-1) is allowed.</li>
       <li><strong>Audio settings</strong> (MODIFY_AUDIO_SETTINGS): to apply audio effects such as the equalizer, bass boost and volume boost.</li>
-      <li><strong>Photo picker</strong>: accessed only when you choose an image to use as a cover; the chosen image is stored on your device only.</li>
-      <li><strong>Internet</strong>: for account authentication, playlist cloud backup/restore, usage analytics and in-app purchase processing.</li>
+      <li><strong>Photo picker</strong> (Android photo picker): only the images you choose are accessed. Images chosen as album or studio covers stay on your device; only photos attached to Community posts are uploaded (Section 4-1). The App does not ask for access to your whole photo library.</li>
+      <li><strong>Internet</strong>: for account authentication, playlist cloud backup/restore, the Community, the AI model download, usage analytics and ad measurement, and in-app purchase processing.</li>
     </ul>
 
     <h3>8. Video playback</h3>
@@ -223,9 +358,10 @@
     <p>The App supports Android Auto. Playback and browsing on the car screen work the same way described above, and no additional personal data is collected.</p>
 
     <h3>10. Third-party services</h3>
-    <p>The App uses the following services provided by Google LLC. Please refer to Google’s policies for how they process data:</p>
+    <p>The App uses the following third-party services. Please refer to their policies for how they process data:</p>
     <ul>
-      <li>Google Analytics for Firebase · Firebase Authentication · Cloud Firestore · Google Play Billing.</li>
+      <li><strong>Google LLC</strong>: Google Analytics for Firebase · Firebase Authentication · Cloud Firestore · Firebase Storage · Google Play Billing · Google Play Asset Delivery.</li>
+      <li><strong>Meta Platforms, Inc.</strong>: Meta (Facebook) SDK app events (Section 6-1). Meta Privacy Policy: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">https://www.facebook.com/privacy/policy/</a></li>
       <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
       <li>Firebase data processing: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></li>
     </ul>
@@ -233,24 +369,28 @@
     <h3>11. Data retention &amp; deletion</h3>
     <ul>
       <li>On-device data (media access, playlists, settings) is deleted when you uninstall the App.</li>
-      <li>Account and cloud-backup data (your email, backed-up playlist metadata) is retained while your account exists.</li>
-      <li><strong>Account/backup deletion requests</strong>: email us at the address below and we will delete your account and the backup data stored in the cloud.</li>
-      <li>Analytics data is automatically deleted after a period defined by Google’s retention settings.</li>
+      <li>Account and cloud data (your email, public name, playlist backup, Community posts, photos and comments, block list) is retained while your account exists.</li>
+      <li><strong>Delete your account in the App</strong>: Account screen → <strong>Delete account</strong> → confirm your password. Your account, public name, cloud backup, your Community posts, their photos and your comments, and your block list are <strong>permanently deleted right away</strong>.</li>
+      <li><strong>Request deletion by email</strong>: if you cannot use the App, email us at the address below and we will delete the same data within 30 days. See <a href="account-deletion.html">Account &amp; data deletion</a> for details.</li>
+      <li>Reports you file (reason, part of the reported text, your account ID) are kept until the operator handles them, then deleted.</li>
+      <li>Studio recordings and separation results on your device remain until you delete them.</li>
+      <li>Analytics data is handled under Google’s retention settings, and app events sent to Meta under Meta’s.</li>
     </ul>
 
     <h3>12. Your choices</h3>
     <ul>
       <li>If you never run a backup, nothing is stored in the cloud.</li>
-      <li><strong>Signing out</strong> disconnects your account on the device. To delete the account itself, use the method in Section 11.</li>
+      <li><strong>Signing out</strong> disconnects your account on the device. You can delete the account itself in the App as described in Section 11.</li>
+      <li>Turning off <strong>“Ad measurement”</strong> on the Account screen stops app events and the advertising ID from being sent to Meta.</li>
       <li>Uninstalling the App removes all on-device app data and stops any further analytics collection.</li>
       <li>You can limit personalized analytics by <strong>resetting or deleting your Advertising ID</strong> in your Android device settings (Privacy / Ads).</li>
     </ul>
 
     <h3>13. Children’s privacy</h3>
-    <p>The App is not directed to children under 13 and does not knowingly collect personal information from children.</p>
+    <p>The App is not directed to children under 13 and does not knowingly collect personal information from children. The Community is a public space and may not be used by children under 13.</p>
 
     <h3>14. Security</h3>
-    <p>Collected and stored information (account, backup, statistics) is transmitted and stored through Google’s secure infrastructure. However, no method of transmission over the Internet is 100% secure.</p>
+    <p>Collected and stored information (account, backup, Community, statistics) is sent over encrypted connections and stored on Google’s secure infrastructure. However, no method of transmission over the Internet is 100% secure.</p>
 
     <h3>15. Changes to this Policy</h3>
     <p>We may update this Policy from time to time. Changes will be posted on this page with an updated effective / last-updated date.</p>
@@ -262,12 +402,7 @@
 </div>
 
 <footer>
-  <div class="footer-links">
-    <a href="index.html">홈</a>
-    <a href="account-deletion.html">계정 및 데이터 삭제</a>
-    <a href="mailto:scbaek65@gmail.com">문의</a>
-  </div>
-  <p>© 2026 XXII player. This privacy policy is provided for the XXII player Android application.</p>
+  © 2026 XXII player. This privacy policy is provided for the XXII player Android application.
 </footer>
 </body>
 </html>
