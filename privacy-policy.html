@@ -80,7 +80,7 @@
     <h3>1. 핵심 요약</h3>
     <ul>
       <li>앱의 대부분 기능은 <strong>계정 없이</strong> 사용할 수 있습니다. 다만 <strong>선택적으로 이메일·비밀번호 계정</strong>을 만들어 재생목록 클라우드 백업/복원, 커뮤니티 글쓰기, 녹음 스튜디오를 이용할 수 있습니다.</li>
-      <li>기기에 저장된 <strong>음악·동영상 파일, 편집한 커버 이미지, 스튜디오 녹음, AI 음원 분리 결과</strong>는 <strong>이용자의 기기에만 저장</strong>되며 외부로 전송·업로드되지 않습니다. 유일한 예외는 이용자가 <strong>커뮤니티 게시글에 직접 첨부한 사진</strong>입니다(4-1항).</li>
+      <li>기기에 저장된 <strong>음악·동영상 파일, 편집한 커버 이미지, 스튜디오 녹음, AI 음원 분리 결과</strong>는 <strong>이용자의 기기에만 저장</strong>되며 외부로 전송·업로드되지 않습니다. 예외는 이용자가 <strong>커뮤니티 게시글에 직접 첨부한 사진</strong>(4-1항)과, <strong>AI 가사 만들기</strong>를 실행한 곡의 오디오(가사 생성에만 사용, 4-4항)입니다.</li>
       <li><strong>커뮤니티</strong>에 쓴 글·사진·댓글과 공개 이름은 <strong>모든 이용자에게 공개</strong>됩니다.</li>
       <li>광고 성과 측정을 위해 <strong>Meta(Facebook) SDK</strong>로 일부 앱 이벤트와 광고 ID를 Meta에 전송합니다. 계정 화면의 <strong>“광고 성과 측정”</strong>에서 언제든 끌 수 있으며, 유럽경제지역·영국·스위스에서는 동의한 경우에만 전송합니다(6-1항).</li>
       <li>계정에 로그인하고 <strong>백업을 실행한 경우에 한해</strong>, 재생목록 정보(재생목록 이름, 각 곡의 제목·아티스트·앨범·재생시간 등 <strong>메타데이터</strong>)가 이용자 <strong>본인 계정</strong>으로 클라우드(Google Firebase)에 저장됩니다. <strong>음악·동영상 파일 자체는 업로드되지 않습니다.</strong></li>
@@ -140,6 +140,14 @@
       <li>처음 사용할 때 분리용 AI 모델(약 20MB)을 <strong>Google Play</strong>에서 내려받습니다. 이 과정에서 앱이 추가로 수집하는 개인정보는 없습니다.</li>
     </ul>
 
+    <h3>4-4. AI 가사 만들기</h3>
+    <ul>
+      <li><span class="tag cloud">클라우드</span>이용자가 곡의 <strong>“가사 만들기 (AI)”</strong>를 실행하면, 그 곡의 오디오(모노로 변환하고 음질을 낮춘 사본)와 선택한 언어가 <strong>Google Gemini(Firebase AI Logic)</strong>로 전송되어 가사와 번역을 만드는 데에만 사용됩니다. 앱 개발자는 이 오디오를 저장하지 않으며, 이메일·계정 정보는 함께 보내지 않습니다.</li>
+      <li><span class="tag">로컬</span>만들어진 가사 파일(.lrc)은 기기의 앱 저장소와 <code>Documents/XXII Lyrics</code> 폴더에만 저장됩니다. 이용자가 직접 불러온 가사 파일과 연결한 가사 폴더는 기기 안에서만 읽습니다.</li>
+      <li>무료 버전에서는 가사를 만들기 전에 보상형 광고를 봅니다(6-2항). Pro에서는 광고가 없습니다.</li>
+      <li>Gemini의 데이터 처리: <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">https://ai.google.dev/gemini-api/terms</a></li>
+    </ul>
+
     <h3>5. 인앱 결제 (XXII Pro)</h3>
     <p>이퀄라이저·오디오 효과, 동영상 화면 속 화면(PIP) 및 백그라운드 재생, 녹음 스튜디오, AI 음원 분리 등 일부 기능은 유료(<strong>XXII Pro</strong>)로 제공되며 <strong>Google Play 인앱 결제</strong>를 통해 판매됩니다.</p>
     <ul>
@@ -177,7 +185,7 @@
       <li>광고를 보여 주고 측정하기 위해 Google이 <strong>광고 ID, IP 주소(대략적 위치), 기기·앱 정보, 광고 조회·클릭 기록</strong>을 수집·처리합니다.</li>
       <li><strong>유럽경제지역(EEA)·영국·스위스</strong> 등 법이 요구하는 지역에서는 Google의 동의 화면으로 먼저 동의 여부를 묻고, 선택에 따라 맞춤 광고 또는 비맞춤 광고를 표시합니다. 이 선택은 계정 화면(로그인하지 않았다면 로그인 화면)의 <strong>“광고 개인정보 설정”</strong>에서 언제든 바꿀 수 있습니다.</li>
       <li>Android 기기 설정에서 광고 ID를 재설정하거나 삭제하면 맞춤 광고를 제한할 수 있습니다.</li>
-      <li>음악·동영상 파일, 곡 정보, 녹음, 게시글 내용, 이메일 주소는 광고에 사용되지 않으며 Google 광고로 전송되지 않습니다.</li>
+      <li>음악·동영상 파일(AI 가사용 오디오 포함), 곡 정보, 녹음, 게시글 내용, 이메일 주소는 광고에 사용되지 않으며 Google 광고로 전송되지 않습니다.</li>
       <li>Google의 광고 데이터 처리: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a></li>
     </ul>
 
@@ -204,7 +212,7 @@
     <h3>10. 제3자 서비스</h3>
     <p>앱은 다음 제3자 서비스를 사용합니다. 각 서비스의 데이터 처리에 관한 사항은 아래 정책을 참고하세요.</p>
     <ul>
-      <li><strong>Google LLC</strong>: Google 애널리틱스(Firebase Analytics) · Firebase Authentication · Cloud Firestore · Firebase Storage · Google Play 결제(Google Play Billing) · Google Play 에셋 전송(Play Asset Delivery) · Google AdMob 및 사용자 메시지 플랫폼(UMP, 광고 동의).</li>
+      <li><strong>Google LLC</strong>: Google 애널리틱스(Firebase Analytics) · Firebase Authentication · Cloud Firestore · Firebase Storage · Google Play 결제(Google Play Billing) · Google Play 에셋 전송(Play Asset Delivery) · Google AdMob 및 사용자 메시지 플랫폼(UMP, 광고 동의) · Firebase AI Logic(Gemini, AI 가사).</li>
       <li><strong>Meta Platforms, Inc.</strong>: Meta(Facebook) SDK 앱 이벤트(6-1항). Meta 개인정보처리방침: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">https://www.facebook.com/privacy/policy/</a></li>
       <li>Google 개인정보처리방침: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
       <li>Firebase 데이터 처리: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></li>
@@ -257,7 +265,7 @@
     <h3>1. Summary</h3>
     <ul>
       <li>Most features work <strong>without an account</strong>. Optionally, you can create an <strong>email &amp; password account</strong> to back up and restore your playlists in the cloud, write in the Community and use the Recording studio.</li>
-      <li>Your <strong>music &amp; video files, edited cover images, studio recordings and AI separation results</strong> are stored <strong>only on your device</strong> and are never uploaded or transmitted. The only exception is a <strong>photo you attach to a Community post yourself</strong> (Section 4-1).</li>
+      <li>Your <strong>music &amp; video files, edited cover images, studio recordings and AI separation results</strong> are stored <strong>only on your device</strong> and are never uploaded or transmitted. The exceptions are a <strong>photo you attach to a Community post yourself</strong> (Section 4-1) and the audio of a song you run <strong>AI lyrics</strong> on (used only to write the lyrics, Section 4-4).</li>
       <li>What you write in the <strong>Community</strong> — posts, photos, comments — and your public name are <strong>visible to every user</strong>.</li>
       <li>To measure our ads, the <strong>Meta (Facebook) SDK</strong> sends some app events and your advertising ID to Meta. You can turn this off at any time with <strong>“Ad measurement”</strong> on the Account screen; in the EEA, the UK and Switzerland it runs only if you agree (Section 6-1).</li>
       <li><strong>Only if you sign in and run a backup</strong>, your playlist information (playlist names and each track’s <strong>metadata</strong> — title, artist, album, duration) is stored in the cloud (Google Firebase) under <strong>your own account</strong>. <strong>The music/video files themselves are never uploaded.</strong></li>
@@ -315,6 +323,14 @@
     <ul>
       <li><span class="tag">LOCAL</span>Splitting a song into vocals and instrumental happens <strong>entirely on your device</strong>; neither the song nor the results are transmitted. Results are saved to the <code>Music/XXII Separated</code> folder.</li>
       <li>The first time, the AI model (about 20 MB) is downloaded from <strong>Google Play</strong>. The App collects no additional personal data for this.</li>
+    </ul>
+
+    <h3>4-4. AI lyrics</h3>
+    <ul>
+      <li><span class="tag cloud">CLOUD</span>When you run <strong>“Make lyrics (AI)”</strong> on a song, its audio (a mono, lower-quality copy) and the languages you chose are sent to <strong>Google Gemini (Firebase AI Logic)</strong>, only to write the lyrics and their translation. The developer does not store this audio, and no email or account details are sent with it.</li>
+      <li><span class="tag">LOCAL</span>The lyrics files (.lrc) are saved only in the App’s storage and the <code>Documents/XXII Lyrics</code> folder on your device. Lyrics files you load and lyrics folders you link are read on your device only.</li>
+      <li>In the free version a rewarded ad plays before lyrics are made (Section 6-2); Pro has no ads.</li>
+      <li>How Gemini handles data: <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">https://ai.google.dev/gemini-api/terms</a></li>
     </ul>
 
     <h3>5. In-app purchases (XXII Pro)</h3>
@@ -381,7 +397,7 @@
     <h3>10. Third-party services</h3>
     <p>The App uses the following third-party services. Please refer to their policies for how they process data:</p>
     <ul>
-      <li><strong>Google LLC</strong>: Google Analytics for Firebase · Firebase Authentication · Cloud Firestore · Firebase Storage · Google Play Billing · Google Play Asset Delivery · Google AdMob and the User Messaging Platform (ad consent).</li>
+      <li><strong>Google LLC</strong>: Google Analytics for Firebase · Firebase Authentication · Cloud Firestore · Firebase Storage · Google Play Billing · Google Play Asset Delivery · Google AdMob and the User Messaging Platform (ad consent) · Firebase AI Logic (Gemini, AI lyrics).</li>
       <li><strong>Meta Platforms, Inc.</strong>: Meta (Facebook) SDK app events (Section 6-1). Meta Privacy Policy: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">https://www.facebook.com/privacy/policy/</a></li>
       <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
       <li>Firebase data processing: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></li>
