@@ -245,8 +245,10 @@ section.doc h3{
   font-variant-numeric:tabular-nums;
 }
 .wrap p,.wrap li{color:color-mix(in srgb,var(--color-text) 82%,transparent)}
-ul{margin:var(--space-3) 0;padding-inline-start:18px}
+ul,ol{margin:var(--space-3) 0;padding-inline-start:18px}
+ol{padding-inline-start:20px}
 li{margin:var(--space-1) 0}
+li > ul,li > ol{margin-block:var(--space-1)}
 li::marker{color:var(--neutral-600)}
 strong{font-weight:500;color:var(--color-text)}
 em{color:var(--accent-300);font-style:normal}
@@ -272,6 +274,8 @@ em{color:var(--accent-300);font-style:normal}
   font-size:11px;letter-spacing:.09em;text-transform:uppercase;
 }
 .wrap tbody tr:last-child td{border-bottom:1px solid var(--color-divider)}
+/* 상태 칸("영구 삭제")은 줄바꿈하지 않습니다 — 첫 칸이 남는 폭을 가져갑니다 */
+.wrap table th:last-child,.wrap table td:last-child{white-space:nowrap}
 
 .tag.cloud{background:var(--neutral-800);color:var(--neutral-100)}
 li > .tag,p > .tag{margin-inline-end:var(--space-2);vertical-align:baseline}
